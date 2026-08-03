@@ -741,9 +741,10 @@ textarea.form-input { min-height: 100px; resize: vertical; }
   .hero-split { grid-template-columns: 1fr; gap: var(--space-xxl); }
   .hero-split--full { gap: 0; min-height: auto; }
   .mesh-hero--full .hero-text-col .container { padding-left: var(--space-xl); padding-right: var(--space-xl); }
+  .hero-image-wrap { order: -1; }
   .hero-visual { min-height: 200px; order: -1; }
   .hero-visual img { position: static; inset: auto; width: 100%; height: auto; }
-  .split-content--image-top .split-image { order: -1; }
+  .split-content .split-image { order: -1; }
   .hero-text-col { padding: var(--space-xxl) 0; }
   .split-content { grid-template-columns: 1fr; gap: var(--space-xxl); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
@@ -787,8 +788,10 @@ textarea.form-input { min-height: 100px; resize: vertical; }
   .tabs { gap: var(--space-xl); overflow-x: auto; scrollbar-width: none; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab { white-space: nowrap; }
-  .panel > img { height: 320px; }
-  .panel-card { top: 50%; left: var(--space-md); right: var(--space-md); width: auto; max-width: none; height: auto; transform: translateY(-50%); justify-content: flex-start; padding: var(--space-xl); }
+  .panel { display: none; }
+  .panel.is-active { display: flex; align-items: center; position: relative; }
+  .panel > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .panel-card { position: relative; top: auto; left: auto; right: auto; width: calc(100% - var(--space-xxl)); max-width: none; height: auto; transform: none; justify-content: center; margin: var(--space-xl) auto; padding: var(--space-xl); background: rgba(255, 255, 255, 0.94); }
   .stat-value { font-size: 32px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
   .logo-track { gap: var(--space-xl); }
@@ -803,7 +806,6 @@ textarea.form-input { min-height: 100px; resize: vertical; }
   .display-xl { font-size: 26px; letter-spacing: -0.52px; }
   .container { padding: 0 var(--space-lg); }
   .stat-value { font-size: 28px; }
-  .panel > img { height: 240px; }
   .panel-card h3 { font-size: 20px; }
 }
 
