@@ -155,23 +155,88 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     });
-  }
 
-  document.querySelectorAll('.btn').forEach(function (btn) {
-    btn.addEventListener('mousemove', function (e) {
-      const rect = btn.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-      btn.style.setProperty('--x', x + 'px');
-      btn.style.setProperty('--y', y + 'px');
-    });
-  });
+    function currentIndex() {
+      for (var i = 0; i < tabs.length; i += 1) {
+        if (tabs[i].getAttribute('aria-selected') === 'true') { return i; }
+      }
+      return 0;
+    }
+
+    // ---- Swipe navigation (touch devices) ----
+    var panelsEl = fold.querySelector('.panels');
+    if (panelsEl) {
+      var swipeStartX = null;
+      var swipeStartY = null;
+      panelsEl.addEventListener('touchstart', function (e) {
+        if (e.touches.length === 1) {
+          swipeStartX = e.touches[0].clientX;
+          swipeStartY = e.touches[0].clientY;
+        }
+      }, { passive: true });
+      panelsEl.addEventListener('touchend', function (e) {
+        if (swipeStartX === null) { return; }
+        var dx = e.changedTouches[0].clientX - swipeStartX;
+        var dy = e.changedTouches[0].clientY - swipeStartY;
+        swipeStartX = null;
+        swipeStartY = null;
+        if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) { return; }
+        var current = currentIndex();
+        var next = dx < 0 ? (current + 1) % tabs.length : (current - 1 + tabs.length) % tabs.length;
+        selectTab(next);
+        var activeTab = fold.querySelector('.tab[aria-selected="true"]');
+        if (activeTab && activeTab.scrollIntoView) {
+          activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      }, { passive: true });
+    }
+  }
 
   document.querySelectorAll('.glow-card').forEach(function (card) {
     card.addEventListener('mousemove', function (e) {
       const rect = card.getBoundingClientRect();
       card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
       card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+    });
+  });
+
+  // ---- Sub-service cards -> dialog popups ----
+  var bodyScrollLocked = false;
+
+  function setBodyLock(lock) {
+    if (lock && !bodyScrollLocked) {
+      document.body.style.overflow = 'hidden';
+      bodyScrollLocked = true;
+    } else if (!lock && bodyScrollLocked) {
+      document.body.style.overflow = '';
+      bodyScrollLocked = false;
+    }
+  }
+
+  const subDialogs = document.querySelectorAll('.sub-dialog');
+
+  subDialogs.forEach(function (dialog) {
+    const closeBtn = dialog.querySelector('.sub-dialog__close');
+    if (closeBtn) {
+      closeBtn.addEventListener('click', function () { dialog.close(); });
+    }
+    dialog.addEventListener('click', function (e) {
+      if (e.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', function () { setBodyLock(false); });
+  });
+
+  document.querySelectorAll('.sub-card').forEach(function (card) {
+    card.addEventListener('click', function () {
+      const targetId = card.getAttribute('data-dialog-id');
+      if (!targetId) return;
+      const dialog = document.getElementById(targetId);
+      if (dialog && typeof dialog.showModal === 'function') {
+        dialog.showModal();
+        setBodyLock(true);
+        const closeBtn = dialog.querySelector('.sub-dialog__close');
+        if (closeBtn) closeBtn.focus();
+      }
     });
   });
 });
