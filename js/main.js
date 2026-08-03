@@ -155,41 +155,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       });
     });
-
-    function currentIndex() {
-      for (var i = 0; i < tabs.length; i += 1) {
-        if (tabs[i].getAttribute('aria-selected') === 'true') { return i; }
-      }
-      return 0;
-    }
-
-    // ---- Swipe navigation (touch devices) ----
-    var panelsEl = fold.querySelector('.panels');
-    if (panelsEl) {
-      var swipeStartX = null;
-      var swipeStartY = null;
-      panelsEl.addEventListener('touchstart', function (e) {
-        if (e.touches.length === 1) {
-          swipeStartX = e.touches[0].clientX;
-          swipeStartY = e.touches[0].clientY;
-        }
-      }, { passive: true });
-      panelsEl.addEventListener('touchend', function (e) {
-        if (swipeStartX === null) { return; }
-        var dx = e.changedTouches[0].clientX - swipeStartX;
-        var dy = e.changedTouches[0].clientY - swipeStartY;
-        swipeStartX = null;
-        swipeStartY = null;
-        if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) { return; }
-        var current = currentIndex();
-        var next = dx < 0 ? (current + 1) % tabs.length : (current - 1 + tabs.length) % tabs.length;
-        selectTab(next);
-        var activeTab = fold.querySelector('.tab[aria-selected="true"]');
-        if (activeTab && activeTab.scrollIntoView) {
-          activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-        }
-      }, { passive: true });
-    }
   }
 
   document.querySelectorAll('.btn').forEach(function (btn) {
