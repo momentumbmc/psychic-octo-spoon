@@ -131,6 +131,492 @@
     </div>
   </section>
 
+  <!-- ======== THE BUSINESS WIREFRAME ======== -->
+  <section class="section section-dark wireframe-section">
+    <div class="container">
+      <div class="fade-in">
+        <p class="micro-cap section-label">Business Architecture</p>
+        <h2 class="display-xl section-title">One Engine, Three Verticals, Ten Disciplines</h2>
+        <p class="body-lg section-body">This is the wireframe of the entire business: five core capabilities feed a single unified core, which drives the three service verticals and the ten disciplines they deliver.</p>
+      </div>
+      <div class="wireframe-figure fade-in delay-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 550" class="wireframe-svg wireframe-desktop" role="img" aria-label="THC Business Solutions architecture wireframe: AI, Human Neuroscience, Cognitive Thinking, Strategy and Intelligence feed the THC unified core, which branches into Consultancy, Training and Procurement.">
+          <defs>
+            <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.18"/>
+            </filter>
+            <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <marker id="arrow-blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#1868DB"/>
+            </marker>
+            <marker id="arrow-training" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#2C7FF0"/>
+            </marker>
+            <marker id="arrow-purple" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#4E8FE3"/>
+            </marker>
+            <marker id="arrow-cyan" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#9DC8FF"/>
+            </marker>
+            <radialGradient id="core-glow" cx="0.32" cy="0.28" r="0.9">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+              <stop offset="0.45" stop-color="#9DC8FF" stop-opacity="0.35"/>
+              <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <style>
+            @keyframes drawLine {
+              to { stroke-dashoffset: 0; }
+            }
+            @keyframes fadeIn {
+              to { opacity: 1; }
+            }
+            .wireframe-svg .line-thc {
+              stroke-dasharray: 900;
+              stroke-dashoffset: 900;
+            }
+            .wireframe-svg .line-svc {
+              stroke-dasharray: 400;
+              stroke-dashoffset: 400;
+            }
+            .wireframe-svg .node-thc,
+            .wireframe-svg .node-layer1,
+            .wireframe-svg .node-layer2 {
+              opacity: 0;
+            }
+            .wireframe-svg.is-revealed .line-thc,
+            .wireframe-svg.is-revealed .line-svc {
+              animation: drawLine 0.9s 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            }
+            .wireframe-svg.is-revealed .line-svc {
+              animation-delay: 1.8s;
+              animation-duration: 0.7s;
+            }
+            .wireframe-svg.is-revealed .node-thc {
+              animation: fadeIn 0.6s 0s forwards;
+            }
+            .wireframe-svg.is-revealed .node-layer1 {
+              animation: fadeIn 0.5s 1.3s forwards;
+            }
+            .wireframe-svg.is-revealed .node-layer2 {
+              animation: fadeIn 0.5s 2.6s forwards;
+            }
+            .wireframe-svg .hub-pulse {
+              opacity: 0.35;
+            }
+            .wireframe-svg.is-revealed .hub-pulse {
+              animation: hubGlow 4.5s 2.8s ease-in-out infinite;
+            }
+            @keyframes hubGlow {
+              0%, 100% { opacity: 0.35; }
+              50% { opacity: 0.75; }
+            }
+          </style>
+
+          <!-- ============= BACKGROUND MESH (STATIC, LOW OPACITY) ============= -->
+          <g fill="none" stroke="#9DC8FF" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.15">
+            <path d="M200,100 L300,295"/>
+            <path d="M200,100 L800,295"/>
+            <path d="M200,100 L1300,295"/>
+            <path d="M450,100 L300,295"/>
+            <path d="M450,100 L800,295"/>
+            <path d="M450,100 L1300,295"/>
+            <path d="M700,100 L300,295"/>
+            <path d="M700,100 L800,295"/>
+            <path d="M700,100 L1300,295"/>
+            <path d="M950,100 L300,295"/>
+            <path d="M950,100 L800,295"/>
+            <path d="M950,100 L1300,295"/>
+            <path d="M1200,100 L300,295"/>
+            <path d="M1200,100 L800,295"/>
+            <path d="M1200,100 L1300,295"/>
+          </g>
+
+          <!-- ============= ANIMATED CONNECTORS ============= -->
+          <g fill="none" stroke-width="2.5">
+            <!-- THC to Capabilities (Cyan) -->
+            <path class="line-thc" stroke="#9DC8FF" d="M800,200 L200,80" marker-end="url(#arrow-cyan)"/>
+            <path class="line-thc" stroke="#9DC8FF" d="M800,200 L450,80" marker-end="url(#arrow-cyan)"/>
+            <path class="line-thc" stroke="#9DC8FF" d="M800,200 L700,80" marker-end="url(#arrow-cyan)"/>
+            <path class="line-thc" stroke="#9DC8FF" d="M800,200 L950,80" marker-end="url(#arrow-cyan)"/>
+            <path class="line-thc" stroke="#9DC8FF" d="M800,200 L1200,80" marker-end="url(#arrow-cyan)"/>
+
+            <!-- THC to Main Services -->
+            <path class="line-thc" stroke="#1868DB" d="M800,200 L300,340" marker-end="url(#arrow-blue)"/>
+            <path class="line-thc" stroke="#2C7FF0" d="M800,200 L1300,340" marker-end="url(#arrow-training)"/>
+            <path class="line-thc" stroke="#4E8FE3" d="M800,200 L800,340" marker-end="url(#arrow-purple)"/>
+
+            <!-- Main Services to Branches -->
+            <!-- Consultancy -->
+            <path class="line-svc" stroke="#1868DB" d="M300,340 L180,460"/>
+            <path class="line-svc" stroke="#1868DB" d="M300,340 L300,460"/>
+            <path class="line-svc" stroke="#1868DB" d="M300,340 L420,460"/>
+            <path class="line-svc" stroke="#1868DB" d="M300,340 L540,460"/>
+            <!-- Training -->
+            <path class="line-svc" stroke="#2C7FF0" d="M1300,340 L1180,460"/>
+            <path class="line-svc" stroke="#2C7FF0" d="M1300,340 L1300,460"/>
+            <path class="line-svc" stroke="#2C7FF0" d="M1300,340 L1420,460"/>
+            <path class="line-svc" stroke="#2C7FF0" d="M1300,340 L1540,460"/>
+            <!-- Procurement -->
+            <path class="line-svc" stroke="#4E8FE3" d="M800,340 L740,460"/>
+            <path class="line-svc" stroke="#4E8FE3" d="M800,340 L860,460"/>
+          </g>
+
+          <!-- ============= CAPABILITIES (TOP ROW) ============= -->
+          <g class="node-layer1" filter="url(#shadow)">
+            <g transform="translate(200, 80)">
+              <rect x="-65" y="-14" width="130" height="28" rx="10" fill="#0E3556" stroke="#9DC8FF" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#9DC8FF" font-size="12" font-weight="600">AI</text>
+            </g>
+            <g transform="translate(450, 80)">
+              <rect x="-75" y="-14" width="150" height="28" rx="10" fill="#0E3556" stroke="#9DC8FF" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#9DC8FF" font-size="11" font-weight="600">Human Neuroscience</text>
+            </g>
+            <g transform="translate(700, 80)">
+              <rect x="-75" y="-14" width="150" height="28" rx="10" fill="#0E3556" stroke="#9DC8FF" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#9DC8FF" font-size="11" font-weight="600">Cognitive Thinking</text>
+            </g>
+            <g transform="translate(950, 80)">
+              <rect x="-65" y="-14" width="130" height="28" rx="10" fill="#0E3556" stroke="#9DC8FF" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#9DC8FF" font-size="12" font-weight="600">Strategy</text>
+            </g>
+            <g transform="translate(1200, 80)">
+              <rect x="-75" y="-14" width="150" height="28" rx="10" fill="#0E3556" stroke="#9DC8FF" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#9DC8FF" font-size="12" font-weight="600">Intelligence</text>
+            </g>
+          </g>
+
+          <!-- ============= CENTRAL HUB (THC) ============= -->
+          <g class="node-thc" transform="translate(800, 200)" filter="url(#shadow)">
+            <title>THC Unified Core — three service verticals, ten disciplines</title>
+            <circle class="hub-bloom" cx="0" cy="0" r="66" fill="#1868DB" opacity="0.28" filter="url(#glow)"/>
+            <circle class="hub-rim" cx="0" cy="0" r="58" fill="none" stroke="#1868DB" stroke-opacity="0.5" stroke-width="1.5"/>
+            <circle cx="0" cy="0" r="45" fill="#071F3B" stroke="#9DC8FF" stroke-opacity="0.25" stroke-width="1"/>
+            <circle class="hub-pulse" cx="0" cy="0" r="44" fill="url(#core-glow)"/>
+            <text x="0" y="-2" text-anchor="middle" fill="#FFFFFF" font-size="26" font-weight="800" letter-spacing="3">THC</text>
+            <text x="0" y="20" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="11" font-weight="500" letter-spacing="2">UNIFIED CORE</text>
+          </g>
+
+          <!-- ============= MAIN SERVICES (MIDDLE ROW) ============= -->
+          <g class="node-layer1" filter="url(#shadow)">
+            <!-- Consultancy -->
+            <g>
+              <title>Consultancy — Business Strategy, Tech &amp; AI Adoption, Branding &amp; Growth, Biomedical &amp; Engineering</title>
+              <circle cx="300" cy="340" r="52" fill="none" stroke="#1868DB" stroke-opacity="0.35" stroke-width="1.5"/><circle cx="300" cy="340" r="45" fill="#1868DB"/>
+              <text x="300" y="346" text-anchor="middle" fill="#FFF" font-size="14" font-weight="700">Consultancy</text>
+            </g>
+
+            <!-- Training -->
+            <g>
+              <title>Training — Culture &amp; Wellness, Equipment Handling, Executive Coaching, Financial Literacy</title>
+              <circle cx="1300" cy="340" r="52" fill="none" stroke="#2C7FF0" stroke-opacity="0.35" stroke-width="1.5"/><circle cx="1300" cy="340" r="45" fill="#2C7FF0"/>
+              <text x="1300" y="346" text-anchor="middle" fill="#FFF" font-size="14" font-weight="700">Training</text>
+            </g>
+
+            <!-- Procurement -->
+            <g>
+              <title>Procurement — Operations &amp; Negotiation, Group Purchasing</title>
+              <circle cx="800" cy="340" r="52" fill="none" stroke="#4E8FE3" stroke-opacity="0.35" stroke-width="1.5"/><circle cx="800" cy="340" r="45" fill="#4E8FE3"/>
+              <text x="800" y="346" text-anchor="middle" fill="#FFF" font-size="14" font-weight="700">Procurement</text>
+            </g>
+          </g>
+
+          <!-- ============= BRANCHES (BOTTOM ROW) ============= -->
+          <g class="node-layer2" filter="url(#shadow)">
+            <!-- Consultancy Branches -->
+            <g transform="translate(180, 460)">
+              <rect x="-60" y="-14" width="120" height="28" rx="10" fill="#0E3556" stroke="#1868DB" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="11" font-weight="500">Business Strategy</text>
+            </g>
+            <g transform="translate(300, 460)">
+              <rect x="-60" y="-14" width="120" height="28" rx="10" fill="#0E3556" stroke="#1868DB" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="11" font-weight="500">Tech &amp; AI Adoption</text>
+            </g>
+            <g transform="translate(420, 460)">
+              <rect x="-60" y="-14" width="120" height="28" rx="10" fill="#0E3556" stroke="#1868DB" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="11" font-weight="500">Branding &amp; Growth</text>
+            </g>
+            <g transform="translate(540, 460)">
+              <rect x="-60" y="-14" width="120" height="28" rx="10" fill="#0E3556" stroke="#1868DB" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="10.5" font-weight="500">Biomedical &amp; Eng.</text>
+            </g>
+
+            <!-- Training Branches -->
+            <g transform="translate(1180, 460)">
+              <rect x="-60" y="-14" width="120" height="28" rx="10" fill="#0E3556" stroke="#2C7FF0" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="11" font-weight="500">Culture &amp; Wellness</text>
+            </g>
+            <g transform="translate(1300, 460)">
+              <rect x="-60" y="-14" width="120" height="28" rx="10" fill="#0E3556" stroke="#2C7FF0" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="11" font-weight="500">Equip. Handling</text>
+            </g>
+            <g transform="translate(1420, 460)">
+              <rect x="-60" y="-14" width="120" height="28" rx="10" fill="#0E3556" stroke="#2C7FF0" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="11" font-weight="500">Exec. Coaching</text>
+            </g>
+            <g transform="translate(1540, 460)">
+              <rect x="-60" y="-14" width="120" height="28" rx="10" fill="#0E3556" stroke="#2C7FF0" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="11" font-weight="500">Financial Literacy</text>
+            </g>
+
+            <!-- Procurement Branches -->
+            <g transform="translate(740, 460)">
+              <rect x="-60" y="-14" width="120" height="28" rx="10" fill="#0E3556" stroke="#4E8FE3" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="11" font-weight="500">Ops &amp; Negotiation</text>
+            </g>
+            <g transform="translate(860, 460)">
+              <rect x="-60" y="-14" width="120" height="28" rx="10" fill="#0E3556" stroke="#4E8FE3" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="11" font-weight="500">Group Purchasing</text>
+            </g>
+          </g>
+
+          <!-- Endpoint nodes (branch terminals) -->
+          <g class="node-layer2">
+            <circle cx="180" cy="444" r="3" fill="#1868DB"/>
+            <circle cx="300" cy="444" r="3" fill="#1868DB"/>
+            <circle cx="420" cy="444" r="3" fill="#1868DB"/>
+            <circle cx="540" cy="444" r="3" fill="#1868DB"/>
+            <circle cx="1180" cy="444" r="3" fill="#2C7FF0"/>
+            <circle cx="1300" cy="444" r="3" fill="#2C7FF0"/>
+            <circle cx="1420" cy="444" r="3" fill="#2C7FF0"/>
+            <circle cx="1540" cy="444" r="3" fill="#2C7FF0"/>
+            <circle cx="740" cy="444" r="3" fill="#4E8FE3"/>
+            <circle cx="860" cy="444" r="3" fill="#4E8FE3"/>
+          </g>
+
+          <!-- Bottom tagline -->
+          <text x="800" y="530" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11" font-weight="400" letter-spacing="2">
+            One Unified Core · Three Verticals · Ten Disciplines</text>
+        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" class="wireframe-svg wireframe-mobile" role="img" aria-label="THC Business Solutions architecture wireframe: AI, Human Neuroscience, Cognitive Thinking, Strategy and Intelligence feed the THC unified core, which branches into Consultancy, Training and Procurement.">
+          <defs>
+            <filter id="shadow-m" x="-20%" y="-20%" width="140%" height="140%">
+              <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000" flood-opacity="0.18"/>
+            </filter>
+            <filter id="glow-m" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2" result="blur"/>
+              <feMerge>
+                <feMergeNode in="blur"/>
+                <feMergeNode in="SourceGraphic"/>
+              </feMerge>
+            </filter>
+            <marker id="arrow-blue-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#1868DB"/>
+            </marker>
+            <marker id="arrow-training-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#2C7FF0"/>
+            </marker>
+            <marker id="arrow-purple-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#4E8FE3"/>
+            </marker>
+            <marker id="arrow-cyan-m" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+              <path d="M0,0 L10,5 L0,10 Z" fill="#9DC8FF"/>
+            </marker>
+            <radialGradient id="core-glow-m" cx="0.32" cy="0.28" r="0.9">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+              <stop offset="0.45" stop-color="#9DC8FF" stop-opacity="0.35"/>
+              <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <style>
+            @keyframes drawLine {
+              to { stroke-dashoffset: 0; }
+            }
+            @keyframes fadeIn {
+              to { opacity: 1; }
+            }
+            .wireframe-mobile .line-thc {
+              stroke-dasharray: 900;
+              stroke-dashoffset: 900;
+            }
+            .wireframe-mobile .line-svc {
+              stroke-dasharray: 400;
+              stroke-dashoffset: 400;
+            }
+            .wireframe-mobile .node-thc,
+            .wireframe-mobile .node-layer1,
+            .wireframe-mobile .node-layer2 {
+              opacity: 0;
+            }
+            .wireframe-mobile.is-revealed .line-thc,
+            .wireframe-mobile.is-revealed .line-svc {
+              animation: drawLine 0.9s 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            }
+            .wireframe-mobile.is-revealed .line-svc {
+              animation-delay: 1.8s;
+              animation-duration: 0.7s;
+            }
+            .wireframe-mobile.is-revealed .node-thc {
+              animation: fadeIn 0.6s 0s forwards;
+            }
+            .wireframe-mobile.is-revealed .node-layer1 {
+              animation: fadeIn 0.5s 1.3s forwards;
+            }
+            .wireframe-mobile.is-revealed .node-layer2 {
+              animation: fadeIn 0.5s 2.6s forwards;
+            }
+            .wireframe-mobile .hub-pulse {
+              opacity: 0.35;
+            }
+            .wireframe-mobile.is-revealed .hub-pulse {
+              animation: hubGlow 4.5s 2.8s ease-in-out infinite;
+            }
+          </style>
+
+          <!-- ============= CAPABILITIES (STACKED TOP) ============= -->
+          <g class="node-layer1" filter="url(#shadow-m)">
+            <g transform="translate(78, 18)">
+              <rect x="-50" y="-14" width="100" height="28" rx="10" fill="#0E3556" stroke="#9DC8FF" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#9DC8FF" font-size="12" font-weight="600">AI</text>
+            </g>
+            <g transform="translate(192, 18)">
+              <rect x="-55" y="-14" width="110" height="28" rx="10" fill="#0E3556" stroke="#9DC8FF" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#9DC8FF" font-size="11.5" font-weight="600">Strategy</text>
+            </g>
+            <g transform="translate(318, 18)">
+              <rect x="-59" y="-14" width="118" height="28" rx="10" fill="#0E3556" stroke="#9DC8FF" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#9DC8FF" font-size="11" font-weight="600">Intelligence</text>
+            </g>
+            <g transform="translate(105, 58)">
+              <rect x="-85" y="-14" width="170" height="28" rx="10" fill="#0E3556" stroke="#9DC8FF" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#9DC8FF" font-size="11" font-weight="600">Human Neuroscience</text>
+            </g>
+            <g transform="translate(298, 58)">
+              <rect x="-85" y="-14" width="170" height="28" rx="10" fill="#0E3556" stroke="#9DC8FF" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#9DC8FF" font-size="11" font-weight="600">Cognitive Thinking</text>
+            </g>
+          </g>
+
+          <!-- ============= CONNECTORS ============= -->
+          <g fill="none" stroke-width="2.5">
+            <path class="line-thc" stroke="#9DC8FF" d="M78,18 L196,116" marker-end="url(#arrow-cyan-m)"/>
+            <path class="line-thc" stroke="#9DC8FF" d="M192,18 L204,116" marker-end="url(#arrow-cyan-m)"/>
+            <path class="line-thc" stroke="#9DC8FF" d="M318,18 L204,116" marker-end="url(#arrow-cyan-m)"/>
+            <path class="line-thc" stroke="#9DC8FF" d="M105,58 L196,116" marker-end="url(#arrow-cyan-m)"/>
+            <path class="line-thc" stroke="#9DC8FF" d="M298,58 L204,116" marker-end="url(#arrow-cyan-m)"/>
+            <path class="line-thc" stroke="#1868DB" d="M200,207 L100,258" marker-end="url(#arrow-blue-m)"/>
+            <path class="line-thc" stroke="#2C7FF0" d="M200,207 L300,258" marker-end="url(#arrow-training-m)"/>
+            <path class="line-thc" stroke="#4E8FE3" d="M200,207 L200,258" marker-end="url(#arrow-purple-m)"/>
+          </g>
+
+          <!-- ============= CENTRAL HUB ============= -->
+          <g class="node-thc" transform="translate(200, 165)" filter="url(#shadow-m)">
+            <title>THC Unified Core — three service verticals, ten disciplines</title>
+            <circle class="hub-bloom" cx="0" cy="0" r="58" fill="#1868DB" opacity="0.28" filter="url(#glow-m)"/>
+            <circle class="hub-rim" cx="0" cy="0" r="52" fill="none" stroke="#1868DB" stroke-opacity="0.5" stroke-width="1.5"/>
+            <circle cx="0" cy="0" r="42" fill="#071F3B" stroke="#9DC8FF" stroke-opacity="0.25" stroke-width="1"/>
+            <circle class="hub-pulse" cx="0" cy="0" r="41" fill="url(#core-glow-m)"/>
+            <text x="0" y="-2" text-anchor="middle" fill="#FFFFFF" font-size="24" font-weight="800" letter-spacing="3">THC</text>
+            <text x="0" y="18" text-anchor="middle" fill="rgba(255,255,255,0.55)" font-size="10" font-weight="500" letter-spacing="2">UNIFIED CORE</text>
+          </g>
+
+          <!-- ============= MAIN SERVICES ============= -->
+          <g class="node-layer1" filter="url(#shadow-m)">
+            <g>
+              <title>Consultancy — four disciplines</title>
+              <circle cx="100" cy="300" r="48" fill="none" stroke="#1868DB" stroke-opacity="0.35" stroke-width="1.5"/><circle cx="100" cy="300" r="42" fill="#1868DB"/>
+              <text x="100" y="306" text-anchor="middle" fill="#FFF" font-size="12.5" font-weight="700">Consultancy</text>
+            </g>
+            <g>
+              <title>Procurement — two disciplines</title>
+              <circle cx="200" cy="300" r="48" fill="none" stroke="#4E8FE3" stroke-opacity="0.35" stroke-width="1.5"/><circle cx="200" cy="300" r="42" fill="#4E8FE3"/>
+              <text x="200" y="306" text-anchor="middle" fill="#FFF" font-size="12.5" font-weight="700">Procurement</text>
+            </g>
+            <g>
+              <title>Training — four disciplines</title>
+              <circle cx="300" cy="300" r="48" fill="none" stroke="#2C7FF0" stroke-opacity="0.35" stroke-width="1.5"/><circle cx="300" cy="300" r="42" fill="#2C7FF0"/>
+              <text x="300" y="306" text-anchor="middle" fill="#FFF" font-size="12.5" font-weight="700">Training</text>
+            </g>
+          </g>
+
+          <!-- ============= SERVICE TO BRANCH LINES ============= -->
+          <g fill="none" stroke-width="2.5">
+            <path class="line-svc" stroke="#1868DB" d="M100,342 L100,372"/>
+            <path class="line-svc" stroke="#1868DB" d="M100,342 L100,410"/>
+            <path class="line-svc" stroke="#1868DB" d="M100,342 L100,448"/>
+            <path class="line-svc" stroke="#1868DB" d="M100,342 L100,486"/>
+            <path class="line-svc" stroke="#4E8FE3" d="M200,342 L200,372"/>
+            <path class="line-svc" stroke="#4E8FE3" d="M200,342 L200,410"/>
+            <path class="line-svc" stroke="#2C7FF0" d="M300,342 L300,372"/>
+            <path class="line-svc" stroke="#2C7FF0" d="M300,342 L300,410"/>
+            <path class="line-svc" stroke="#2C7FF0" d="M300,342 L300,448"/>
+            <path class="line-svc" stroke="#2C7FF0" d="M300,342 L300,486"/>
+          </g>
+
+          <!-- ============= BRANCHES (STACKED) ============= -->
+          <g class="node-layer2" filter="url(#shadow-m)">
+            <g transform="translate(100, 386)">
+              <rect x="-50" y="-14" width="100" height="28" rx="10" fill="#0E3556" stroke="#1868DB" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="10" font-weight="500">Business Strategy</text>
+            </g>
+            <g transform="translate(100, 424)">
+              <rect x="-50" y="-14" width="100" height="28" rx="10" fill="#0E3556" stroke="#1868DB" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="10" font-weight="500">Tech &amp; AI Adoption</text>
+            </g>
+            <g transform="translate(100, 462)">
+              <rect x="-50" y="-14" width="100" height="28" rx="10" fill="#0E3556" stroke="#1868DB" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="10" font-weight="500">Branding &amp; Growth</text>
+            </g>
+            <g transform="translate(100, 500)">
+              <rect x="-50" y="-14" width="100" height="28" rx="10" fill="#0E3556" stroke="#1868DB" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="10" font-weight="500">Biomedical &amp; Eng.</text>
+            </g>
+            <g transform="translate(200, 386)">
+              <rect x="-50" y="-14" width="100" height="28" rx="10" fill="#0E3556" stroke="#4E8FE3" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="10" font-weight="500">Ops &amp; Negotiation</text>
+            </g>
+            <g transform="translate(200, 424)">
+              <rect x="-50" y="-14" width="100" height="28" rx="10" fill="#0E3556" stroke="#4E8FE3" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="10" font-weight="500">Group Purchasing</text>
+            </g>
+            <g transform="translate(300, 386)">
+              <rect x="-50" y="-14" width="100" height="28" rx="10" fill="#0E3556" stroke="#2C7FF0" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="10" font-weight="500">Culture &amp; Wellness</text>
+            </g>
+            <g transform="translate(300, 424)">
+              <rect x="-50" y="-14" width="100" height="28" rx="10" fill="#0E3556" stroke="#2C7FF0" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="10" font-weight="500">Equip. Handling</text>
+            </g>
+            <g transform="translate(300, 462)">
+              <rect x="-50" y="-14" width="100" height="28" rx="10" fill="#0E3556" stroke="#2C7FF0" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="10" font-weight="500">Exec. Coaching</text>
+            </g>
+            <g transform="translate(300, 500)">
+              <rect x="-50" y="-14" width="100" height="28" rx="10" fill="#0E3556" stroke="#2C7FF0" stroke-width="1.5"/>
+              <text x="0" y="4" text-anchor="middle" fill="#EAF0F9" font-size="10" font-weight="500">Financial Literacy</text>
+            </g>
+          </g>
+
+          <!-- Endpoint nodes (branch terminals) -->
+          <g class="node-layer2">
+            <circle cx="100" cy="372" r="3" fill="#1868DB"/>
+            <circle cx="100" cy="410" r="3" fill="#1868DB"/>
+            <circle cx="100" cy="448" r="3" fill="#1868DB"/>
+            <circle cx="100" cy="486" r="3" fill="#1868DB"/>
+            <circle cx="200" cy="372" r="3" fill="#4E8FE3"/>
+            <circle cx="200" cy="410" r="3" fill="#4E8FE3"/>
+            <circle cx="300" cy="372" r="3" fill="#2C7FF0"/>
+            <circle cx="300" cy="410" r="3" fill="#2C7FF0"/>
+            <circle cx="300" cy="448" r="3" fill="#2C7FF0"/>
+            <circle cx="300" cy="486" r="3" fill="#2C7FF0"/>
+          </g>
+
+          <!-- Bottom tagline -->
+          <text x="200" y="548" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-size="11" font-weight="400" letter-spacing="2">
+            One Unified Core · Three Verticals · Ten Disciplines</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
   <!-- ======== CTA ======== -->
   <section class="section cta-section cta-navy">
     <div class="container">
@@ -185,3 +671,4 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+

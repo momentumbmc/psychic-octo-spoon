@@ -125,6 +125,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { passive: true });
   }
 
+  // ---- Business wireframe lazy animation (starts on scroll into view) ----
+  const wireframeSvgs = document.querySelectorAll('.wireframe-svg');
+  wireframeSvgs.forEach(function (wireframeSvg) {
+    const wireframeObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          wireframeSvg.classList.add('is-revealed');
+          wireframeObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.2 });
+    wireframeObserver.observe(wireframeSvg);
+  });
+
   // ---- Tabbed industry fold ----
   const fold = document.querySelector('.industry-fold');
   if (fold) {

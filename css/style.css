@@ -23,7 +23,10 @@
   /* Dark navy / text scale */
   --brand-dark-900: var(--brand-secondary);
   --brand-navy: #0e3556;
+  --brand-core: #071f3b;
   --sky-soft: #9dc8ff;
+  --primary-bright: #2c7ff0;
+  --on-dark-chip-text: #eaf0f9;
   --ink: var(--brand-secondary);
   --ink-secondary: #1a3650;
   --ink-mute: #4a6a82;
@@ -335,6 +338,29 @@ a:hover { color: var(--primary-deep); }
 .section-title { margin-bottom: var(--space-xl); max-width: 720px; }
 .section-body { max-width: 680px; color: var(--ink-secondary); margin-bottom: var(--space-xl); }
 .section-dark .section-body { color: var(--on-dark-secondary); }
+
+/* --- Business Wireframe (About) --- */
+.wireframe-section { overflow: hidden; }
+.wireframe-figure { margin-top: var(--space-xl); }
+.wireframe-figure svg { display: block; width: 100%; height: auto; font-family: var(--font-sans); }
+.wireframe-figure .wireframe-mobile { display: none; }
+
+/* Wireframe palette -> design tokens (SVG presentation attrs accept CSS var()) */
+.wireframe-figure svg [fill="#1868DB"] { fill: var(--primary); }
+.wireframe-figure svg [stroke="#1868DB"] { stroke: var(--primary); }
+.wireframe-figure svg [fill="#2C7FF0"] { fill: var(--primary-bright); }
+.wireframe-figure svg [stroke="#2C7FF0"] { stroke: var(--primary-bright); }
+.wireframe-figure svg [fill="#4E8FE3"] { fill: var(--primary-soft); }
+.wireframe-figure svg [stroke="#4E8FE3"] { stroke: var(--primary-soft); }
+.wireframe-figure svg [fill="#9DC8FF"] { fill: var(--sky-soft); }
+.wireframe-figure svg [stroke="#9DC8FF"] { stroke: var(--sky-soft); }
+.wireframe-figure svg [fill="#0E3556"] { fill: var(--brand-navy); }
+.wireframe-figure svg [stroke="#0E3556"] { stroke: var(--brand-navy); }
+.wireframe-figure svg [fill="#071F3B"] { fill: var(--brand-core); }
+.wireframe-figure svg [fill="#EAF0F9"] { fill: var(--on-dark-chip-text); }
+.wireframe-figure svg [fill="#FFF"] { fill: var(--on-primary); }
+.wireframe-figure svg [fill="#FFFFFF"] { fill: var(--on-primary); }
+.wireframe-figure svg [stop-color="#9DC8FF"] { stop-color: var(--sky-soft); }
 
 /* --- Split Content Layout (image + text) --- */
 .split-content {
@@ -866,31 +892,12 @@ a:hover { color: var(--primary-deep); }
 
 .stat-label { font-size: 14px; color: var(--ink-mute); line-height: 1.4; }
 
-/* --- Logo Strip / Trusted By --- */
+/* --- Ticker strip (TradingView) --- */
 .logo-strip {
   padding: var(--space-xxl) 0; overflow: hidden; user-select: none;
 }
 
-.logo-track {
-  display: flex; gap: var(--space-huge); align-items: center;
-  animation: logo-scroll 30s linear infinite;
-  width: max-content;
-}
-
-.logo-item {
-  flex-shrink: 0; padding: var(--space-xl) var(--space-xxl);
-  border: 1px solid var(--hairline); border-radius: var(--radius-lg);
-  font-size: 14px; font-weight: 400; color: var(--ink-mute);
-  white-space: nowrap; letter-spacing: -0.2px;
-  transition: border-color 0.3s var(--ease-out), color 0.3s var(--ease-out);
-}
-
-.logo-item:hover { border-color: var(--primary); color: var(--ink); }
-
-@keyframes logo-scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
+.tradingview-widget-container { position: relative; width: 100%; }
 
 /* --- Mockup Card (Stripe-style product UI composite) --- */
 .mockup-card {
@@ -1167,8 +1174,6 @@ textarea.form-input { min-height: 100px; resize: vertical; }
   }
   .stat-value { font-size: 32px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
-  .logo-track { gap: var(--space-xl); }
-  .logo-item { padding: var(--space-md) var(--space-lg); font-size: 12px; }
   .mockup-content { grid-template-columns: 1fr; }
   .sub-card { padding: var(--space-xl); }
   .sub-dialog__head { padding: var(--space-xl); }
@@ -1187,6 +1192,8 @@ textarea.form-input { min-height: 100px; resize: vertical; }
   .sub-dialog--branded .tradeschool-logo { height: 20px; }
   .sub-dialog__close { width: 40px; height: 40px; }
   .mesh-bg::before { animation: none; }
+  .wireframe-figure .wireframe-desktop { display: none; }
+  .wireframe-figure .wireframe-mobile { display: block; }
 }
 
 @media (max-width: 480px) {
