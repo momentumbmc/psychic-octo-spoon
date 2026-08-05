@@ -5,57 +5,68 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
 
 :root {
-  /* ===== CHANGE THESE 3 TO REBRAND THE ENTIRE SITE ===== */
+  /* ==============================================================
+     REBRAND CONTRACT — edit ONLY these 3 master colour names to
+     restyle every page. Each scale below derives itself
+     automatically from them, so a rebrand is a 3-line change:
+       --brand-primary    primary brand colour   (buttons, links, fills)
+       --brand-secondary  deep brand navy        (dark sections, footer, navy tints)
+       --brand-accent     accent colour          (highlights, micro-caps, CTAs)
+     ============================================================== */
   --brand-primary: #1868DB;
   --brand-secondary: #051C2C;
   --brand-accent: #FF462D;
-  /* ====================================================== */
 
-  /* Primary blue scale */
-  --primary: var(--brand-primary);
-  --primary-deep: #1456b8;
-  --primary-press: #0d3d85;
-  --primary-soft: #4e8fe3;
-  --primary-bg-subdued: #e6f0fd;
-  --primary-bg-subdued-hover: #c5d9f9;
-  --primary-rgb: 24, 104, 219;
+  /* ---- Fixed neutrals (brand-independent; keep AA) ---- */
+  --brand-white: #ffffff;
+  --brand-black: #0a1220;   /* ink base — near-black */
 
-  /* Dark navy / text scale */
-  --brand-dark-900: var(--brand-secondary);
-  --brand-navy: #0e3556;
-  --brand-core: #071f3b;
-  --sky-soft: #9dc8ff;
-  --primary-bright: #2c7ff0;
-  --on-dark-chip-text: #eaf0f9;
-  --ink: var(--brand-secondary);
-  --ink-secondary: #1a3650;
-  --ink-mute: #4a6a82;
-  --ink-mute-2: #3a5a72;
-  --shadow-blue: #001a2c;
-  --shadow-rgb: 5, 28, 44;
+  /* ---- Primary brand scale (derived from --brand-primary) ---- */
+  --primary: var(--brand-primary);                                            /* base */
+  --primary-bright: color-mix(in srgb, var(--brand-primary) 90%, var(--brand-white)); /* ~#2f77de bright action blue */
+  --primary-soft: color-mix(in srgb, var(--brand-primary) 76%, var(--brand-white));    /* ~#4f8ce4 lighter blue */
+  --primary-deep: color-mix(in srgb, var(--brand-primary) 84%, var(--brand-black));    /* ~#1456b8 hover */
+  --primary-press: color-mix(in srgb, var(--brand-primary) 60%, var(--brand-black));   /* ~#0e3e85 active */
+  --primary-bg-subdued: color-mix(in srgb, var(--brand-primary) 10%, var(--brand-white)); /* ~#e8f0fb soft fill */
+  --primary-bg-subdued-hover: color-mix(in srgb, var(--brand-primary) 25%, var(--brand-white)); /* ~#c5d9f6 */
 
-  /* On-dark surfaces */
+  /* ---- Text scale (fixed neutrals · every tier ≥4.5:1 on white) ---- */
+  --ink: var(--brand-black);                                                  /* ~#0a1220 · 18.8:1 AAA */
+  --ink-secondary: color-mix(in srgb, var(--brand-black) 82%, var(--brand-white)); /* ~#363c48 · ~11:1 AAA */
+  --ink-mute-2: color-mix(in srgb, var(--brand-black) 70%, var(--brand-white));    /* ~#545962 · ~7:1 AAA */
+  --ink-mute: color-mix(in srgb, var(--brand-black) 60%, var(--brand-white));      /* ~#6c7179 · 4.9:1 AA floor */
+
+  /* ---- Dark brand navy tints (derived from --brand-secondary) ---- */
+  --brand-dark-900: var(--brand-secondary);                                  /* darkest navy */
+  --brand-navy: color-mix(in srgb, var(--brand-secondary) 72%, var(--brand-primary)); /* ~#0a315d navy chips */
+  --brand-core: color-mix(in srgb, var(--brand-secondary) 93%, var(--brand-primary));  /* ~#06304f */
+  --btn-on-dark-hover: color-mix(in srgb, var(--brand-secondary) 88%, var(--brand-primary)); /* ~#072541 */
+  --shadow-blue: #001a2c;   /* fixed deep shadow (art only) */
+
+  /* ---- Accent scale (derived from --brand-accent) ---- */
+  --ruby: var(--brand-accent);                                                /* accent base */
+  --accent-text: color-mix(in srgb, var(--brand-accent) 45%, var(--brand-black)); /* dark accent, readable on white */
+  --magenta: color-mix(in srgb, var(--brand-accent) 77%, var(--brand-white));    /* ~#ff7161 warm highlight */
+  --sky-soft: color-mix(in srgb, var(--brand-primary) 42%, var(--brand-white));  /* ~#9ec0f0 light blue */
+
+  /* ---- On-dark surfaces (fixed alpha overlays) ---- */
   --on-dark-secondary: rgba(255, 255, 255, 0.75);
   --on-dark-subdued: rgba(255, 255, 255, 0.72);
   --on-dark-faint: rgba(255, 255, 255, 0.1);
   --on-dark-chip: rgba(255, 255, 255, 0.12);
   --on-dark-chip-hover: rgba(255, 255, 255, 0.18);
+  --on-dark-chip-text: #eaf0f9;
 
-  /* Accent / highlight scale */
-  --ruby: var(--brand-accent);
-  --magenta: #ff7a5c;
-
-  /* Mesh gradient colors */
+  /* ---- Mesh gradient colours (hero artwork · fixed by design) ---- */
   --mesh-cream: #f5e9d4;
   --mesh-orange: #fed7aa;
   --mesh-blue-light: #bbd4f7;
   --mesh-blue-mid: #7aaeed;
   --mesh-coral: #ff8a75;
-  --btn-on-dark-hover: #0a2a40;
 
-  /* Surfaces */
-  --on-primary: #ffffff;
-  --canvas: #ffffff;
+  /* ---- Surfaces ---- */
+  --on-primary: var(--brand-white);
+  --canvas: var(--brand-white);
   --canvas-soft: #f6f9fc;
   --canvas-cream: #f5e9d4;
   --canvas-glass: rgba(255, 255, 255, 0.94);
@@ -129,7 +140,8 @@ a:hover { color: var(--primary-deep); }
 .body-lg { font-size: 17px; font-weight: 400; line-height: 1.7; letter-spacing: 0; }
 .body-md { font-size: 16px; font-weight: 400; line-height: 1.7; letter-spacing: 0; }
 .caption { font-size: 13px; font-weight: 450; line-height: 1.5; letter-spacing: -0.39px; }
-.micro-cap { font-size: 10px; font-weight: 500; line-height: 1.15; letter-spacing: 0.1px; text-transform: uppercase; color: var(--brand-accent); }
+.micro-cap { font-size: 10px; font-weight: 500; line-height: 1.15; letter-spacing: 0.1px; text-transform: uppercase; color: var(--accent-text); }
+.section-dark .micro-cap { color: var(--ruby); }
 
 /* --- Container --- */
 .container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--space-xl); }
@@ -141,7 +153,7 @@ a:hover { color: var(--primary-deep); }
   background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
 }
 
-.nav.scrolled { background: rgba(255, 255, 255, 0.96); box-shadow: 0 1px 3px rgba(var(--shadow-rgb), 0.08); }
+.nav.scrolled { background: rgba(255, 255, 255, 0.96); box-shadow: 0 1px 3px color-mix(in srgb, var(--ink) 8%, transparent); }
 
 .nav-inner {
   max-width: var(--container-max); margin: 0 auto; padding: 0 var(--space-xl);
@@ -203,7 +215,7 @@ a:hover { color: var(--primary-deep); }
 .btn:hover::after { opacity: 1; }
 
 .btn-primary { background: var(--primary); color: var(--on-primary); }
-.btn-primary:hover { background: var(--primary-deep); color: var(--on-primary); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(var(--primary-rgb), 0.3); }
+.btn-primary:hover { background: var(--primary-deep); color: var(--on-primary); transform: translateY(-1px); box-shadow: 0 4px 12px color-mix(in srgb, var(--primary) 30%, transparent); }
 .btn-primary:active { background: var(--primary-press); transform: translateY(0); }
 
 .btn-secondary { background: transparent; color: var(--primary); border: 1px solid var(--primary); }
@@ -381,6 +393,10 @@ a:hover { color: var(--primary-deep); }
 
 .split-text .section-body { margin-bottom: var(--space-lg); }
 
+/* Flip split order (image-first markup rendered text-left) without direction hacks */
+.split-content--flipped { direction: rtl; }
+.split-content--flipped > * { direction: ltr; }
+
 /* --- Cards --- */
 .card {
   position: relative;
@@ -390,7 +406,7 @@ a:hover { color: var(--primary-deep); }
   will-change: transform;
 }
 
-.css-11x1h9e {
+.card-icon {
   position: absolute; top: 50%; right: var(--space-xl); transform: translateY(-50%);
   max-width: 50px; height: auto; display: block;
 }
@@ -513,7 +529,7 @@ a:hover { color: var(--primary-deep); }
 .sub-dialog[open] { animation: dialog-in 0.3s var(--ease-out); }
 
 .sub-dialog::backdrop {
-  background: rgba(var(--shadow-rgb), 0.55);
+  background: color-mix(in srgb, var(--ink) 55%, transparent);
   backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px);
 }
 
@@ -724,7 +740,7 @@ a:hover { color: var(--primary-deep); }
   border-radius: var(--radius-pill);
 }
 .sub-dialog__range-fill--core { background: var(--gradient-primary); }
-.sub-dialog__range-fill--tier { background: linear-gradient(90deg, rgba(var(--primary-rgb), 0.28), rgba(var(--primary-rgb), 0.18)); }
+.sub-dialog__range-fill--tier { background: linear-gradient(90deg, color-mix(in srgb, var(--primary) 28%, transparent), color-mix(in srgb, var(--primary) 18%, transparent)); }
 
 .sub-dialog__range-mark {
   position: absolute; top: calc(var(--space-xl) + 2px); transform: translateX(-50%);
@@ -739,7 +755,7 @@ a:hover { color: var(--primary-deep); }
 .sub-dialog__range-key { display: inline-flex; align-items: center; gap: var(--space-sm); }
 .sub-dialog__range-swatch { display: inline-block; width: 14px; height: 8px; border-radius: var(--radius-pill); flex: none; }
 .sub-dialog__range-swatch--core { background: var(--gradient-primary); }
-.sub-dialog__range-swatch--tier { background: rgba(var(--primary-rgb), 0.28); }
+.sub-dialog__range-swatch--tier { background: color-mix(in srgb, var(--primary) 28%, transparent); }
 
 .tradeschool-logo {
   display: inline-block; height: 30px; width: auto; vertical-align: middle;
@@ -764,6 +780,25 @@ a:hover { color: var(--primary-deep); }
   from { opacity: 0; transform: translateY(12px) scale(0.98); }
   to { opacity: 1; transform: none; }
 }
+
+/* --- Method Layout (split: intro + steps | sticky mockup) --- */
+.method-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: var(--space-huge);
+  align-items: start;
+}
+
+.method-layout__aside {
+  position: sticky; top: calc(var(--nav-height) + var(--space-xl));
+  border: 1px solid var(--hairline); border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  background:
+    radial-gradient(circle at 15% 15%, color-mix(in srgb, var(--primary) 10%, transparent), transparent 55%),
+    radial-gradient(circle at 85% 80%, color-mix(in srgb, var(--ruby) 8%, transparent), transparent 50%);
+}
+
+.method-layout__aside .mockup-card { border: none; box-shadow: var(--shadow-lg); }
 
 /* --- Method Steps --- */
 .method-step { position: relative; padding-left: var(--space-xxl); }
@@ -908,6 +943,7 @@ a:hover { color: var(--primary-deep); }
 
 .mockup-header {
   display: flex; gap: var(--space-sm); margin-bottom: var(--space-lg); align-items: center;
+  flex-wrap: wrap;
 }
 
 .mockup-dot {
@@ -932,6 +968,79 @@ a:hover { color: var(--primary-deep); }
 
 .mockup-label { color: var(--ink-mute); }
 .mockup-value { color: var(--ink); font-weight: 400; }
+
+/* --- Mockup Card: diagnostic dashboard (index method section) --- */
+.mockup-header-title { font-size: 12px; color: var(--ink-mute); margin-left: var(--space-sm); }
+
+.mockup-status {
+  display: inline-flex; align-items: center; gap: 6px; margin-left: auto;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--primary-deep);
+  background: var(--primary-bg-subdued);
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--brand-white));
+  border-radius: var(--radius-pill); padding: 3px 10px;
+}
+.mockup-status-dot { width: 6px; height: 6px; border-radius: var(--radius-pill); background: var(--primary); }
+
+.mockup-index {
+  background: linear-gradient(150deg, var(--primary-bg-subdued), color-mix(in srgb, var(--brand-secondary) 7%, var(--brand-white)));
+  border: 1px solid var(--hairline); border-radius: var(--radius-lg);
+  padding: var(--space-lg); margin-bottom: var(--space-lg);
+}
+.mockup-index-meta { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; }
+.mockup-index-value {
+  font-size: 44px; font-weight: 300; line-height: 1; letter-spacing: -1px;
+  color: var(--ink); font-feature-settings: 'tnum' on;
+}
+.mockup-index-denom { font-size: 14px; color: var(--ink-mute); font-weight: 400; letter-spacing: 0; margin-left: 4px; }
+.mockup-index-status { font-size: 12.5px; font-weight: 500; color: var(--accent-text); }
+.mockup-index-date { font-size: 11px; color: var(--ink-mute); }
+
+.mockup-track {
+  position: relative; display: block; height: 8px; margin-top: var(--space-md);
+  background: var(--track-bg); border-radius: var(--radius-pill); overflow: hidden;
+}
+.mockup-track-fill {
+  position: absolute; top: 0; left: 0; height: 100%; border-radius: var(--radius-pill);
+  width: var(--w, 0%);
+}
+.mockup-track-fill--current { background: var(--primary); }
+.mockup-track-fill--target { background: color-mix(in srgb, var(--primary) 32%, var(--brand-white)); }
+.mockup-track--index { height: 10px; margin-top: var(--space-md); }
+.mockup-track-fill--index { background: linear-gradient(90deg, var(--primary), var(--primary-bright)); }
+
+.mockup-metrics { display: flex; flex-direction: column; gap: var(--space-md); }
+.mockup-metric { padding-bottom: var(--space-md); border-bottom: 1px solid var(--hairline); }
+.mockup-metric:last-child { border-bottom: none; padding-bottom: 0; }
+.mockup-metric-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; }
+.mockup-metric-head .mockup-label { font-size: 12.5px; }
+.mockup-metric-values { display: inline-flex; align-items: baseline; gap: var(--space-xs); font-feature-settings: 'tnum' on; flex-wrap: wrap; }
+.mockup-metric-values em { font-style: normal; font-weight: 400; color: var(--ink-mute-2); font-size: 13px; }
+.mockup-metric-values strong { font-weight: 600; color: var(--ink); font-size: 14px; }
+.mockup-arrow { color: var(--primary); font-size: 12px; }
+.mockup-delta {
+  display: inline-block; margin-left: var(--space-xs);
+  font-size: 11px; font-weight: 600; border-radius: var(--radius-pill); padding: 2px 8px;
+}
+.mockup-delta--good { background: var(--primary-bg-subdued); color: var(--primary-deep); }
+.mockup-delta--bad  { background: color-mix(in srgb, var(--ruby) 10%, var(--brand-white)); color: var(--accent-text); }
+
+.mockup-divider { height: 1px; background: var(--hairline); margin: var(--space-lg) 0 var(--space-md); }
+
+.mockup-flagged { display: flex; flex-wrap: wrap; gap: var(--space-sm); }
+.mockup-flagged .mockup-label { flex-basis: 100%; margin-bottom: 2px; }
+.mockup-chip {
+  font-size: 11.5px; font-weight: 500; color: var(--ink-secondary);
+  background: var(--canvas-soft); border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg); padding: 5px 10px;
+}
+.mockup-chip::before { content: '• '; color: var(--ruby); }
+
+.mockup-footnote {
+  margin-top: var(--space-lg); padding-top: var(--space-md);
+  border-top: 1px dashed var(--hairline);
+  font-size: 11px; color: var(--ink-mute);
+}
 
 /* --- Footer --- */
 .footer {
@@ -983,7 +1092,7 @@ a:hover { color: var(--primary-deep); }
   outline: none;
 }
 
-.form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.12); }
+.form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 12%, transparent); }
 .form-input::placeholder { color: var(--ink-mute); }
 
 select.form-input {
@@ -1156,7 +1265,7 @@ textarea.form-input { min-height: 100px; resize: vertical; }
   .mesh-hero h1 { max-width: 100%; }
   .card { padding: var(--space-xl); }
   .card--with-icon { padding-right: var(--space-xl); }
-  .card--with-icon .css-11x1h9e { position: static; transform: none; margin-bottom: var(--space-md); }
+  .card--with-icon .card-icon { position: static; transform: none; margin-bottom: var(--space-md); }
   .phase-item { padding: var(--space-lg); }
   .step-card { padding: var(--space-xl); }
   .value-card { padding: var(--space-xl); }
@@ -1175,6 +1284,8 @@ textarea.form-input { min-height: 100px; resize: vertical; }
   .stat-value { font-size: 32px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
   .mockup-content { grid-template-columns: 1fr; }
+  .method-layout { grid-template-columns: 1fr; gap: var(--space-xxl); }
+  .method-layout__aside { position: static; }
   .sub-card { padding: var(--space-xl); }
   .sub-dialog__head { padding: var(--space-xl); }
   .sub-dialog__head h3 { font-size: 22px; }
@@ -1252,6 +1363,7 @@ textarea.form-input { min-height: 100px; resize: vertical; }
 .mt-lg { margin-top: var(--space-lg); }
 .mt-xl { margin-top: var(--space-xl); }
 .mt-xxl { margin-top: var(--space-xxl); }
+.mt-sm { margin-top: var(--space-sm); }
 .flex-wrap-gap-xl { display: flex; gap: var(--space-xl); flex-wrap: wrap; }
 .mockup-value--accent { color: var(--primary); }
 .hero-subhead--split { max-width: 520px; }
