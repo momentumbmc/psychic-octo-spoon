@@ -11,7 +11,7 @@
      automatically from them, so a rebrand is a 3-line change:
        --brand-primary    primary brand colour   (buttons, links, fills)
        --brand-secondary  deep brand navy        (dark sections, footer, navy tints)
-       --brand-accent     accent colour          (highlights, micro-caps, CTAs)
+       --brand-accent     accent colour          (highlights, CTAs)
      ============================================================== */
   --brand-primary: #1868DB;
   --brand-secondary: #051C2C;
@@ -34,6 +34,8 @@
   --ink-secondary: color-mix(in srgb, var(--brand-black) 82%, var(--brand-white)); /* ~#363c48 · ~11:1 AAA */
   --ink-mute-2: color-mix(in srgb, var(--brand-black) 70%, var(--brand-white));    /* ~#545962 · ~7:1 AAA */
   --ink-mute: color-mix(in srgb, var(--brand-black) 60%, var(--brand-white));      /* ~#6c7179 · 4.9:1 AA floor */
+  --micro-cap-color: var(--brand-secondary);                        /* micro-cap labels — navy, white on dark */
+  --micro-cap-underline: var(--primary);                          /* micro-cap underline — primary blue, white on dark */
 
   /* ---- Dark brand navy tints (derived from --brand-secondary) ---- */
   --brand-dark-900: var(--brand-secondary);                                  /* darkest navy */
@@ -140,8 +142,9 @@ a:hover { color: var(--primary-deep); }
 .body-lg { font-size: 17px; font-weight: 400; line-height: 1.7; letter-spacing: 0; }
 .body-md { font-size: 16px; font-weight: 400; line-height: 1.7; letter-spacing: 0; }
 .caption { font-size: 13px; font-weight: 450; line-height: 1.5; letter-spacing: -0.39px; }
-.micro-cap { font-size: 10px; font-weight: 500; line-height: 1.15; letter-spacing: 0.1px; text-transform: uppercase; color: var(--accent-text); }
-.section-dark .micro-cap { color: var(--ruby); }
+.micro-cap { font-size: 13px; font-weight: 500; line-height: 1.15; letter-spacing: 0.1px; text-transform: uppercase; color: var(--micro-cap-color); }
+.micro-cap::after { content: ''; display: block; width: 25px; height: 3px; margin-top: 4px; background: var(--micro-cap-underline); }
+.section-dark .micro-cap, .sub-dialog__head .micro-cap { --micro-cap-color: var(--on-primary); --micro-cap-underline: var(--on-primary); }
 
 /* --- Container --- */
 .container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--space-xl); }
@@ -479,7 +482,7 @@ a:hover { color: var(--primary-deep); }
 
 .sub-card__tag::after {
   content: ''; display: block; width: 25px; height: 3px;
-  background: var(--primary); margin-top: 4px;
+  background: var(--micro-cap-underline); margin-top: 4px;
   transition: background 0.5s var(--ease-out);
 }
 
@@ -537,7 +540,7 @@ a:hover { color: var(--primary-deep); }
 
 .sub-dialog__head .sub-dialog__tag {
   margin-bottom: var(--space-md);
-  background: var(--on-dark-chip); color: var(--sky-soft);
+  background: var(--on-dark-chip);
 }
 
 .sub-dialog__head h3 {
@@ -763,7 +766,9 @@ a:hover { color: var(--primary-deep); }
   border-top: 1px solid var(--hairline); padding-top: var(--space-xl);
 }
 
-.sub-dialog__foot-note { font-size: 12.5px; color: var(--ink-mute); line-height: 1.5; }
+.sub-dialog__foot .btn { flex: none; }
+
+.sub-dialog__foot-note { font-size: 12.5px; color: var(--ink-mute); line-height: 1.5; flex: 1 1 auto; min-width: 0; }
 
 @keyframes bar-grow { from { transform: scaleX(0); } }
 
@@ -1355,7 +1360,8 @@ textarea.form-input { min-height: 100px; resize: vertical; }
 .flex-wrap-gap-xl { display: flex; gap: var(--space-xl); flex-wrap: wrap; }
 .hero-subhead--split { max-width: 520px; }
 .footer .nav-logo { margin-bottom: var(--space-sm); }
-.micro-cap--centered { text-align: center; color: var(--ink-mute); margin-bottom: var(--space-xl); }
+.micro-cap--centered { text-align: center; margin-bottom: var(--space-xl); }
+.micro-cap--centered::after { margin: 4px auto 0; }
 html { scroll-padding-top: calc(var(--nav-height) + var(--space-xl)); }
 
 
