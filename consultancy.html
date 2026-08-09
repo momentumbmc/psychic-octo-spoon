@@ -10,10 +10,10 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <nav class="nav" role="navigation">
+  <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="assets/shared/logo.png" alt="THC Business Solutions" height="32">
+        <img src="assets/shared/logo.png" width="32" height="32" alt="THC Business Solutions">
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -25,7 +25,7 @@
       </ul>
       <a href="contact.html" class="btn btn-primary nav-cta">Book a Session</a>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
       </button>
@@ -35,20 +35,15 @@
   <main id="main-content">
 
   <!-- ======== HERO ======== -->
-  <section class="mesh-hero">
-    <div class="mesh-bg"></div>
+  <section class="mesh-hero mesh-hero--bg">
+    <div class="hero-bg">
+      <img src="assets/consultancy/hero.webp" width="1850" height="850" alt="" fetchpriority="high">
+    </div>
     <div class="container">
-      <div class="hero-split">
-        <div>
-          <h1 class="display-xxl fade-in">You've Already Tried the Rebrand. Here's Why It Didn't Hold.</h1>
-          <p class="body-lg hero-subhead fade-in delay-1 hero-subhead--split">A new identity can't fix a workflow that's bleeding staff and margin underneath it. Healthcare Engineering diagnoses the structural problem first, then builds strategy, brand, and growth on a foundation that's stable.</p>
-          <div class="fade-in delay-2">
-            <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
-          </div>
-        </div>
-        <div class="hero-image-wrap fade-scale delay-2">
-          <img src="assets/consultancy/hero.webp" alt="Business consultation" fetchpriority="high">
-        </div>
+      <h1 class="display-xxl fade-in">You've Already Tried the Rebrand. Here's Why It Didn't Hold.</h1>
+      <p class="body-lg hero-subhead fade-in delay-1">A new identity can't fix a workflow that's bleeding staff and margin underneath it. Healthcare Engineering diagnoses the structural problem first, then builds strategy, brand, and growth on a foundation that's stable.</p>
+      <div class="fade-in delay-2">
+        <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
       </div>
     </div>
   </section>
@@ -65,7 +60,7 @@
           <p class="body-lg fade-in delay-4 ink-secondary">National survey data backs this pattern up: a 2026 Harris Poll survey for Google Cloud found clinicians spend close to 28 hours a week on administrative tasks, and 82 percent report burnout symptoms tied to that load. Fix the workflow and you're also treating a real cause of the turnover problem next door.</p>
         </div>
         <div class="split-image fade-right">
-          <img src="assets/consultancy/strategy-session.webp" alt="Strategy session" loading="lazy">
+          <img src="assets/consultancy/strategy-session.webp" width="1264" height="843" alt="Strategy session" loading="lazy">
         </div>
       </div>
     </div>
@@ -82,22 +77,22 @@
       <div class="stagger-group mt-xxl">
         <div class="phase-item">
           <span class="phase-label">Phase 1</span>
-          <h4 class="heading-md">Diagnostic Audit</h4>
+          <h3 class="heading-md">Diagnostic Audit</h3>
           <p>Stakeholder interviews across clinical, administrative, and ownership perspectives, paired with a direct review of workflows, scheduling, referral paths, and documentation load.</p>
         </div>
         <div class="phase-item">
           <span class="phase-label">Phase 2</span>
-          <h4 class="heading-md">Root-Cause Mapping</h4>
+          <h3 class="heading-md">Root-Cause Mapping</h3>
           <p>The findings get traced back to their origin, not their symptom: distinguishing, for example, a staffing shortage that's a scheduling-design problem from one that's genuinely a hiring problem.</p>
         </div>
         <div class="phase-item">
           <span class="phase-label">Phase 3</span>
-          <h4 class="heading-md">Structural Rebuild</h4>
+          <h3 class="heading-md">Structural Rebuild</h3>
           <p>We rebuild the operational pieces the diagnosis identified, in the sequence that prevents the fix from being undone by whatever caused the original problem.</p>
         </div>
         <div class="phase-item">
           <span class="phase-label">Phase 4</span>
-          <h4 class="heading-md">Brand & Growth Strategy</h4>
+          <h3 class="heading-md">Brand & Growth Strategy</h3>
           <p>Only now does external-facing work begin — positioning, messaging, and growth strategy built on a structure that can support the claims being made.</p>
         </div>
       </div>
@@ -419,7 +414,7 @@
     <div class="container">
       <div class="split-content">
         <div class="split-image fade-left">
-          <img src="assets/consultancy/business-planning.webp" alt="Business planning" loading="lazy">
+          <img src="assets/consultancy/business-planning.webp" width="1500" height="1049" alt="Business planning" loading="lazy">
         </div>
         <div class="split-text">
           <p class="micro-cap section-label fade-in">The System</p>
@@ -448,7 +443,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
-            <img src="assets/shared/logoname.png" alt="THC Business Solutions" height="32">
+            <img src="assets/shared/logoname.png" width="1726" height="140" alt="THC Business Solutions">
           </a>
           <p>Diagnosing what's actually broken inside independent healthcare organizations, then rebuilding it in the order that makes the fix hold.</p>
         </div>

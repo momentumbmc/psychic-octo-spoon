@@ -10,10 +10,10 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <nav class="nav" role="navigation">
+  <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="assets/shared/logo.png" alt="THC Business Solutions" height="32">
+        <img src="assets/shared/logo.png" width="32" height="32" alt="THC Business Solutions">
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -25,7 +25,7 @@
       </ul>
       <a href="contact.html" class="btn btn-primary nav-cta">Book a Session</a>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
       </button>
@@ -35,20 +35,15 @@
   <main id="main-content">
 
   <!-- ======== HERO ======== -->
-  <section class="mesh-hero">
-    <div class="mesh-bg"></div>
+  <section class="mesh-hero mesh-hero--bg">
+    <div class="hero-bg">
+      <img src="assets/procurement/hero.webp" width="1850" height="850" alt="" fetchpriority="high">
+    </div>
     <div class="container">
-      <div class="hero-split">
-        <div>
-          <h1 class="display-xxl fade-in">You're Paying Like You Have No Leverage. You Don't Have To.</h1>
-          <p class="body-lg hero-subhead fade-in delay-1 hero-subhead--split">Independent clinics buying alone pay rates set for organizations with no negotiating power. Pooling demand through our Guided Buying platform typically brings supply costs down 10 to 18 percent, and every recommendation is vetted by biomedical engineers before it's vetted by price.</p>
-          <div class="fade-in delay-2">
-            <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
-          </div>
-        </div>
-        <div class="hero-image-wrap fade-scale delay-2">
-          <img src="assets/procurement/hero.webp" alt="Medical supplies" fetchpriority="high">
-        </div>
+      <h1 class="display-xxl fade-in">You're Paying Like You Have No Leverage. You Don't Have To.</h1>
+      <p class="body-lg hero-subhead fade-in delay-1">Independent clinics buying alone pay rates set for organizations with no negotiating power. Pooling demand through our Guided Buying platform typically brings supply costs down 10 to 18 percent, and every recommendation is vetted by biomedical engineers before it's vetted by price.</p>
+      <div class="fade-in delay-2">
+        <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
       </div>
     </div>
   </section>
@@ -64,7 +59,7 @@
           <p class="body-lg fade-in delay-3 ink-secondary">That last point is easy to underweight and expensive in practice: a device that's marginally cheaper but incompatible with existing equipment often costs more over eighteen months than the sticker price ever suggested.</p>
         </div>
         <div class="split-image fade-right">
-          <img src="assets/procurement/medical-equipment.webp" alt="Medical equipment" loading="lazy">
+          <img src="assets/procurement/medical-equipment.webp" width="1672" height="941" alt="Medical equipment" loading="lazy">
         </div>
       </div>
     </div>
@@ -80,7 +75,7 @@
           <p class="body-lg section-body">Most group purchasing organizations are financial intermediaries. They negotiate a discount without evaluating whether a product is the right clinical fit for the buyer. Ours is staffed by biomedical engineers and product specialists who vet for fit first and cost second, on the position that the cheapest option only works if it's genuinely compatible. This is our Analytical &amp; Data-Driven Rigor applied to supply chain specifically: vetting decisions get made on evaluated fit, not sales-rep enthusiasm.</p>
           <div class="mt-xxl">
             <p class="micro-cap section-label">The Clinical Reality</p>
-            <h2 class="display-xl section-title">The Financial Drain of Fragmented Purchasing</h2>
+            <h3 class="display-xl section-title">The Financial Drain of Fragmented Purchasing</h3>
             <p class="body-lg section-body">Independent clinic owners and private hospitals are routinely penalized by decentralized supply chains. Operating in isolation means you are subjected to exorbitant retail markups, inconsistent supply quality, and predatory vendor contracts. Every dollar wasted on mismanaged procurement is a dollar stolen from facility expansion and patient care.</p>
           </div>
           <div class="mt-xxl">
@@ -408,7 +403,7 @@
     <div class="container">
       <div class="split-content">
         <div class="split-image fade-left">
-          <img src="assets/procurement/supply-chain.webp" alt="Supply chain" loading="lazy">
+          <img src="assets/procurement/supply-chain.webp" width="5412" height="4328" alt="Supply chain" loading="lazy">
         </div>
         <div class="split-text">
           <p class="micro-cap section-label fade-in">The System</p>
@@ -437,7 +432,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
-            <img src="assets/shared/logoname.png" alt="THC Business Solutions" height="32">
+            <img src="assets/shared/logoname.png" width="1726" height="140" alt="THC Business Solutions">
           </a>
           <p>Diagnosing what's actually broken inside independent healthcare organizations, then rebuilding it in the order that makes the fix hold.</p>
         </div>

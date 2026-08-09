@@ -10,10 +10,10 @@
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <nav class="nav" role="navigation">
+  <nav class="nav">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo">
-        <img src="assets/shared/logo.png" alt="THC Business Solutions" height="32">
+        <img src="assets/shared/logo.png" width="32" height="32" alt="THC Business Solutions">
       </a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
@@ -25,7 +25,7 @@
       </ul>
       <a href="contact.html" class="btn btn-primary nav-cta">Book a Session</a>
       <button class="nav-mobile-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
           <line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>
         </svg>
       </button>
@@ -44,7 +44,7 @@
           <p class="body-lg hero-subhead fade-in delay-1 hero-subhead--split">THC Business Solutions was built by people who worked inside healthcare operations rather than inside advertising. That changes what you notice is broken, and in what order you'd fix it.</p>
         </div>
         <div class="hero-image-wrap fade-scale delay-2">
-          <img src="assets/about/hero.webp" alt="Healthcare professionals" fetchpriority="high">
+          <img src="assets/about/hero.webp" width="2592" height="1458" alt="Healthcare professionals" fetchpriority="high">
         </div>
       </div>
     </div>
@@ -55,7 +55,7 @@
     <div class="container">
       <div class="split-content">
         <div class="split-image fade-left">
-          <img src="assets/about/medical-consultation.webp" alt="Medical consultation" loading="lazy">
+          <img src="assets/about/medical-consultation.webp" width="1448" height="1086" alt="Medical consultation" loading="lazy">
         </div>
         <div class="split-text">
           <p class="micro-cap section-label fade-in">Our Purpose</p>
@@ -96,7 +96,7 @@
     <div class="container">
       <div class="split-content split-content--flipped">
         <div class="split-image fade-right">
-          <img src="assets/about/engineering-team.webp" alt="Engineering team" loading="lazy">
+          <img src="assets/about/engineering-team.webp" width="1536" height="1075" alt="Engineering team" loading="lazy">
         </div>
         <div class="split-text">
           <p class="micro-cap section-label fade-in">Founding</p>
@@ -170,55 +170,6 @@
               <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
             </radialGradient>
           </defs>
-
-          <style>
-            @keyframes drawLine {
-              to { stroke-dashoffset: 0; }
-            }
-            @keyframes fadeIn {
-              to { opacity: 1; }
-            }
-            .wireframe-svg .line-thc {
-              stroke-dasharray: 900;
-              stroke-dashoffset: 900;
-            }
-            .wireframe-svg .line-svc {
-              stroke-dasharray: 400;
-              stroke-dashoffset: 400;
-            }
-            .wireframe-svg .node-thc,
-            .wireframe-svg .node-layer1,
-            .wireframe-svg .node-layer2 {
-              opacity: 0;
-            }
-            .wireframe-svg.is-revealed .line-thc,
-            .wireframe-svg.is-revealed .line-svc {
-              animation: drawLine 0.9s 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            }
-            .wireframe-svg.is-revealed .line-svc {
-              animation-delay: 1.8s;
-              animation-duration: 0.7s;
-            }
-            .wireframe-svg.is-revealed .node-thc {
-              animation: fadeIn 0.6s 0s forwards;
-            }
-            .wireframe-svg.is-revealed .node-layer1 {
-              animation: fadeIn 0.5s 1.3s forwards;
-            }
-            .wireframe-svg.is-revealed .node-layer2 {
-              animation: fadeIn 0.5s 2.6s forwards;
-            }
-            .wireframe-svg .hub-pulse {
-              opacity: 0.35;
-            }
-            .wireframe-svg.is-revealed .hub-pulse {
-              animation: hubGlow 4.5s 2.8s ease-in-out infinite;
-            }
-            @keyframes hubGlow {
-              0%, 100% { opacity: 0.35; }
-              50% { opacity: 0.75; }
-            }
-          </style>
 
           <!-- ============= BACKGROUND MESH (STATIC, LOW OPACITY) ============= -->
           <g fill="none" stroke="#9DC8FF" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.15">
@@ -426,51 +377,6 @@
             </radialGradient>
           </defs>
 
-          <style>
-            @keyframes drawLine {
-              to { stroke-dashoffset: 0; }
-            }
-            @keyframes fadeIn {
-              to { opacity: 1; }
-            }
-            .wireframe-mobile .line-thc {
-              stroke-dasharray: 900;
-              stroke-dashoffset: 900;
-            }
-            .wireframe-mobile .line-svc {
-              stroke-dasharray: 400;
-              stroke-dashoffset: 400;
-            }
-            .wireframe-mobile .node-thc,
-            .wireframe-mobile .node-layer1,
-            .wireframe-mobile .node-layer2 {
-              opacity: 0;
-            }
-            .wireframe-mobile.is-revealed .line-thc,
-            .wireframe-mobile.is-revealed .line-svc {
-              animation: drawLine 0.9s 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-            }
-            .wireframe-mobile.is-revealed .line-svc {
-              animation-delay: 1.8s;
-              animation-duration: 0.7s;
-            }
-            .wireframe-mobile.is-revealed .node-thc {
-              animation: fadeIn 0.6s 0s forwards;
-            }
-            .wireframe-mobile.is-revealed .node-layer1 {
-              animation: fadeIn 0.5s 1.3s forwards;
-            }
-            .wireframe-mobile.is-revealed .node-layer2 {
-              animation: fadeIn 0.5s 2.6s forwards;
-            }
-            .wireframe-mobile .hub-pulse {
-              opacity: 0.35;
-            }
-            .wireframe-mobile.is-revealed .hub-pulse {
-              animation: hubGlow 4.5s 2.8s ease-in-out infinite;
-            }
-          </style>
-
           <!-- ============= CAPABILITIES (STACKED TOP) ============= -->
           <g class="node-layer1" filter="url(#shadow-m)">
             <g transform="translate(78, 18)">
@@ -635,7 +541,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
-            <img src="assets/shared/logoname.png" alt="THC Business Solutions" height="32">
+            <img src="assets/shared/logoname.png" width="1726" height="140" alt="THC Business Solutions">
           </a>
           <p>Diagnosing what's actually broken inside independent healthcare organizations, then rebuilding it in the order that makes the fix hold.</p>
         </div>

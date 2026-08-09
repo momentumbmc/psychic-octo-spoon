@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const nav = document.querySelector('.nav');
   if (nav) {
     window.addEventListener('scroll', function () {
-      nav.classList.toggle('scrolled', window.pageYOffset > 20);
+      nav.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
   }
 
@@ -18,25 +18,26 @@ document.addEventListener('DOMContentLoaded', function () {
   const navLinks = document.querySelector('.nav-links');
 
   if (toggle && navLinks) {
+    const icon = toggle.querySelector('svg');
+
+    function setMenuIcon(open) {
+      if (!icon) return;
+      icon.innerHTML = open
+        ? '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>'
+        : '<line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>';
+    }
+
     toggle.addEventListener('click', function () {
       const isOpen = navLinks.classList.toggle('open');
       toggle.setAttribute('aria-expanded', isOpen);
-      const icon = toggle.querySelector('svg');
-      if (icon) {
-        icon.innerHTML = isOpen
-          ? '<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>'
-          : '<line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>';
-      }
+      setMenuIcon(isOpen);
     });
 
     navLinks.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', function () {
         navLinks.classList.remove('open');
         toggle.setAttribute('aria-expanded', 'false');
-        const icon = toggle.querySelector('svg');
-        if (icon) {
-          icon.innerHTML = '<line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/>';
-        }
+        setMenuIcon(false);
       });
     });
   }
@@ -49,6 +50,8 @@ document.addEventListener('DOMContentLoaded', function () {
       link.setAttribute('aria-current', 'page');
     }
   });
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   const observerOptions = { threshold: 0.08, rootMargin: '0px 0px -30px 0px' };
 
@@ -78,8 +81,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }, observerOptions);
 
-  // Observe all animatable elements
-  document.querySelectorAll('.fade-in, .fade-scale, .fade-left, .fade-right, .stagger-group').forEach(function (el) {
+  // Observe all animatable elements (reveals, stagger groups, counters)
+  document.querySelectorAll('.fade-in, .fade-scale, .fade-left, .fade-right, .stagger-group, .stat-value').forEach(function (el) {
     revealObserver.observe(el);
   });
 
@@ -87,6 +90,10 @@ document.addEventListener('DOMContentLoaded', function () {
   function animateCounter(el) {
     const target = parseInt(el.dataset.target, 10) || 0;
     const suffix = el.dataset.suffix || '';
+    if (prefersReducedMotion.matches) {
+      el.textContent = target.toLocaleString() + suffix;
+      return;
+    }
     const duration = Math.min(2000, Math.max(800, target * 3));
     const start = performance.now();
 
@@ -109,19 +116,26 @@ document.addEventListener('DOMContentLoaded', function () {
     revealObserver.observe(el);
   });
 
-  // ---- Gradient mesh parallax on scroll ----
+  // ---- Gradient mesh parallax on scroll (rAF-throttled) ----
   const meshBg = document.querySelector('.mesh-bg');
-  if (meshBg) {
+  if (meshBg && !prefersReducedMotion.matches) {
+    const hero = meshBg.closest('.mesh-hero');
+    let ticking = false;
+
     window.addEventListener('scroll', function () {
-      const hero = meshBg.closest('.mesh-hero');
-      if (hero) {
-        const rect = hero.getBoundingClientRect();
-        const heroTop = rect.top + window.pageYOffset;
-        const relativeScroll = window.pageYOffset - heroTop;
-        if (relativeScroll > -hero.offsetHeight && relativeScroll < hero.offsetHeight) {
-          meshBg.style.transform = 'translateY(' + (relativeScroll * 0.15) + 'px)';
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        if (hero) {
+          const rect = hero.getBoundingClientRect();
+          const heroTop = rect.top + window.scrollY;
+          const relativeScroll = window.scrollY - heroTop;
+          if (relativeScroll > -hero.offsetHeight && relativeScroll < hero.offsetHeight) {
+            meshBg.style.transform = 'translateY(' + (relativeScroll * 0.15) + 'px)';
+          }
         }
-      }
+        ticking = false;
+      });
     }, { passive: true });
   }
 
@@ -142,15 +156,16 @@ document.addEventListener('DOMContentLoaded', function () {
   // ---- Tabbed industry fold ----
   const fold = document.querySelector('.industry-fold');
   if (fold) {
-    const tabs = Array.prototype.slice.call(fold.querySelectorAll('.tab'));
-    const panels = Array.prototype.slice.call(fold.querySelectorAll('.panel'));
+    const tabs = Array.from(fold.querySelectorAll('.tab'));
+    const panels = Array.from(fold.querySelectorAll('.panel'));
 
     function selectTab(index) {
       tabs.forEach(function (tab, i) {
         const active = i === index;
         tab.setAttribute('aria-selected', active ? 'true' : 'false');
         tab.tabIndex = active ? 0 : -1;
-        panels[i].classList.toggle('is-active', active);
+        const panel = panels[i];
+        if (panel) panel.classList.toggle('is-active', active);
       });
     }
 
@@ -171,17 +186,17 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     function currentIndex() {
-      for (var i = 0; i < tabs.length; i += 1) {
-        if (tabs[i].getAttribute('aria-selected') === 'true') { return i; }
-      }
-      return 0;
+      const index = tabs.findIndex(function (tab) {
+        return tab.getAttribute('aria-selected') === 'true';
+      });
+      return index > -1 ? index : 0;
     }
 
     // ---- Swipe navigation (touch devices) ----
-    var panelsEl = fold.querySelector('.panels');
+    const panelsEl = fold.querySelector('.panels');
     if (panelsEl) {
-      var swipeStartX = null;
-      var swipeStartY = null;
+      let swipeStartX = null;
+      let swipeStartY = null;
       panelsEl.addEventListener('touchstart', function (e) {
         if (e.touches.length === 1) {
           swipeStartX = e.touches[0].clientX;
@@ -190,15 +205,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }, { passive: true });
       panelsEl.addEventListener('touchend', function (e) {
         if (swipeStartX === null) { return; }
-        var dx = e.changedTouches[0].clientX - swipeStartX;
-        var dy = e.changedTouches[0].clientY - swipeStartY;
+        const dx = e.changedTouches[0].clientX - swipeStartX;
+        const dy = e.changedTouches[0].clientY - swipeStartY;
         swipeStartX = null;
         swipeStartY = null;
         if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) { return; }
-        var current = currentIndex();
-        var next = dx < 0 ? (current + 1) % tabs.length : (current - 1 + tabs.length) % tabs.length;
+        const current = currentIndex();
+        const next = dx < 0 ? (current + 1) % tabs.length : (current - 1 + tabs.length) % tabs.length;
         selectTab(next);
-        var activeTab = fold.querySelector('.tab[aria-selected="true"]');
+        const activeTab = tabs[next];
         if (activeTab && activeTab.scrollIntoView) {
           activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
         }
@@ -206,16 +221,25 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  document.querySelectorAll('.glow-card').forEach(function (card) {
-    card.addEventListener('mousemove', function (e) {
-      const rect = card.getBoundingClientRect();
-      card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
-      card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+  // ---- Glow cards: one delegated mousemove listener (rAF-throttled) ----
+  if (!prefersReducedMotion.matches) {
+    let glowTicking = false;
+
+    document.addEventListener('mousemove', function (e) {
+      const card = e.target.closest ? e.target.closest('.glow-card') : null;
+      if (!card || glowTicking) return;
+      glowTicking = true;
+      requestAnimationFrame(function () {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+        glowTicking = false;
+      });
     });
-  });
+  }
 
   // ---- Sub-service cards -> dialog popups ----
-  var bodyScrollLocked = false;
+  let bodyScrollLocked = false;
 
   function setBodyLock(lock) {
     if (lock && !bodyScrollLocked) {
