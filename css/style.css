@@ -1416,4 +1416,16 @@ html { scroll-padding-top: calc(var(--nav-height) + var(--space-xl)); }
   50% { opacity: 0.75; }
 }
 
+/* --- Contact Form --- */
+.form-honeypot {
+  position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0;
+}
+
+.form-status {
+  margin-top: var(--space-md); font-size: 14px; line-height: 1.5;
+  color: var(--ink-mute);
+}
+
+.form-status--error { color: var(--ruby); }
+
 
