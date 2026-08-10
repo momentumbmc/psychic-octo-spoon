@@ -219,6 +219,21 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       }, { passive: true });
     }
+
+    // ---- Arrow navigation for the tabbed fold ----
+    const arrows = fold.querySelectorAll('.fold-arrow');
+    arrows.forEach(function (arrow) {
+      arrow.addEventListener('click', function () {
+        const current = currentIndex();
+        const isNext = arrow.classList.contains('fold-arrow--next');
+        const next = isNext ? (current + 1) % tabs.length : (current - 1 + tabs.length) % tabs.length;
+        selectTab(next);
+        const activeTab = tabs[next];
+        if (activeTab && activeTab.scrollIntoView) {
+          activeTab.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+      });
+    });
   }
 
   // ---- Glow cards: one delegated mousemove listener (rAF-throttled) ----

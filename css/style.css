@@ -872,7 +872,7 @@ a:hover { color: var(--primary-deep); }
 .cta-navy .btn-primary:hover { background: var(--canvas-soft); color: var(--ink); transform: translateY(-1px); box-shadow: var(--shadow-lg); }
 
 /* --- Industry Fold (tabbed showcase) --- */
-.industry-fold { margin-top: var(--space-huge); }
+.industry-fold { position: relative; margin-top: var(--space-huge); }
 
 .tabs {
   display: flex; gap: var(--space-xxl);
@@ -915,6 +915,50 @@ a:hover { color: var(--primary-deep); }
 .panel-card h3 .text-primary { color: var(--brand-primary); }
 .panel-card p { color: var(--ink-secondary); margin-bottom: var(--space-md); }
 .panel-card .btn { align-self: flex-start; padding: 0 16px; }
+
+.fold-arrow {
+  --fold-arrow-size: 48px;
+  --fold-arrow-gap: var(--space-md);
+  --fold-arrow-nudge: 3px;
+  --fold-arrow-glass: rgba(255, 255, 255, 0.4);
+  position: absolute; right: var(--space-lg);
+  z-index: 5;
+  width: var(--fold-arrow-size); height: var(--fold-arrow-size);
+  display: grid; place-items: center;
+  border: 1px solid var(--hairline); border-radius: var(--radius-pill);
+  background: var(--canvas-glass); box-shadow: var(--shadow-md);
+  color: var(--ink); cursor: pointer;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transition: opacity 0.25s var(--ease-out), visibility 0.25s var(--ease-out), background 0.25s var(--ease-out), color 0.25s var(--ease-out);
+}
+
+.fold-arrow svg {
+  stroke: currentColor; fill: none;
+  stroke-width: 2px; stroke-linecap: round; stroke-linejoin: round;
+  width: 24px; height: 24px;
+}
+
+.fold-arrow--prev { top: calc(50% - var(--fold-arrow-gap) - var(--fold-arrow-size)); --fold-arrow-nudge: -3px; }
+.fold-arrow--next { top: calc(50% + var(--fold-arrow-gap)); --fold-arrow-nudge: 3px; }
+
+.industry-fold:hover .fold-arrow,
+.fold-arrow:focus-visible { opacity: 1; visibility: visible; pointer-events: auto; }
+
+.fold-arrow:hover {
+  background: var(--fold-arrow-glass);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--ink);
+}
+
+.fold-arrow:active { background: var(--brand-primary); color: var(--on-primary); }
+
+.industry-fold:hover .fold-arrow svg { animation: fold-arrow-nudge 1.6s var(--ease-out) infinite; }
+
+@keyframes fold-arrow-nudge {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(var(--fold-arrow-nudge)); }
+}
 
 @keyframes panel-in {
   from { opacity: 0; transform: translateY(12px); }
@@ -1239,6 +1283,7 @@ a:hover { color: var(--primary-deep); }
     justify-content: center; padding: var(--space-xl);
     background: var(--canvas-glass);
   }
+  .fold-arrow { --fold-arrow-size: 40px; }
   .stat-value { font-size: 32px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
   .method-layout { grid-template-columns: 1fr; gap: var(--space-xxl); }
