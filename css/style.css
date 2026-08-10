@@ -74,7 +74,6 @@
   --canvas-soft: #f6f9fc;
   --canvas-glass: rgba(255, 255, 255, 0.94);
   --hairline: #dce3eb;
-  --hairline-input: #8aabc4;
   --track-bg: #edf1f6;
   --gradient-primary: linear-gradient(90deg, var(--primary), var(--primary-soft));
   --font-sans: 'IBM Plex Sans', 'SF Pro Display', system-ui, -apple-system, sans-serif;
@@ -1069,33 +1068,6 @@ a:hover { color: var(--primary-deep); }
   font-size: 12px; color: var(--ink-mute);
 }
 
-/* --- Form --- */
-.form-group { margin-bottom: var(--space-xl); }
-
-.form-group label {
-  display: block; font-size: 13px; font-weight: 400;
-  color: var(--ink-secondary); margin-bottom: var(--space-sm);
-}
-
-.form-input {
-  width: 100%; font-family: var(--font-sans); font-size: 16px; font-weight: 400;
-  color: var(--ink); background: var(--canvas); padding: 8px 12px;
-  border: 1px solid var(--hairline-input); border-radius: var(--radius-lg);
-  transition: border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
-  outline: none;
-}
-
-.form-input:focus { border-color: var(--primary); box-shadow: 0 0 0 3px color-mix(in srgb, var(--primary) 12%, transparent); }
-.form-input::placeholder { color: var(--ink-mute); }
-
-select.form-input {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%234a6a82' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat; background-position: right 12px center; padding-right: 36px;
-}
-
-textarea.form-input { min-height: 100px; resize: vertical; }
-
 /* --- Steps Row (Contact) --- */
 .steps-row,
 .values-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-xxl); }
@@ -1415,17 +1387,5 @@ html { scroll-padding-top: calc(var(--nav-height) + var(--space-xl)); }
   0%, 100% { opacity: 0.35; }
   50% { opacity: 0.75; }
 }
-
-/* --- Contact Form --- */
-.form-honeypot {
-  position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0;
-}
-
-.form-status {
-  margin-top: var(--space-md); font-size: 14px; line-height: 1.5;
-  color: var(--ink-mute);
-}
-
-.form-status--error { color: var(--ruby); }
 
 
