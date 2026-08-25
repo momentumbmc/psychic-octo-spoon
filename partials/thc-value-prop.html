@@ -1,0 +1,25 @@
+<!-- THC Value Prop — JPM Large Value Prop clone (reusable template)
+     Copy this block per use. Replace {{placeholders}} with your image + content.
+     Add class thc-lvp--flipped on wrapper for image-left / text-right.
+     Font is IBM Plex Sans via css/thc-value-prop.css — no extra config.
+-->
+<div class="thc-lvp">
+  <div class="thc-lvp__decor-top" aria-hidden="true"></div>
+  <div class="thc-lvp__image">
+    <img class="thc-lvp__img" src="{{image}}" width="1140" height="810" alt="{{alt}}" loading="lazy">
+  </div>
+  <div class="thc-lvp__border" aria-hidden="true"></div>
+  <div class="thc-lvp__content">
+    <p class="thc-lvp__eyebrow">{{eyebrow}}</p>
+    <h2 class="thc-lvp__title">{{title}} <span class="thc-lvp__accent">{{accent}}</span></h2>
+    <p class="thc-lvp__desc">{{desc}}</p>
+    <!-- Use one CTA: either .thc-lvp__cta (pill button) or .thc-lvp__link (text arrow) -->
+    <a class="thc-lvp__cta" href="{{href}}">{{ctaText}}</a>
+  </div>
+</div>
+
+<!-- Example — text link variant (like Foundation split):
+<a class="thc-lvp__link" href="about.html">Our Story
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+</a>
+-->

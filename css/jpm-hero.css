@@ -1,0 +1,144 @@
+/* ============================================================
+   JPM Hero — 100% clone of JPMorgan US housing hero
+   Screenshot: header left / description / READ MORE teal / image right + bottom tab bar
+   Namespace .jpm-hero — isolated, IBM Plex Sans forced
+   Reusable for about / contact heroes
+   ============================================================ */
+
+.jpm-hero {
+  --jpm-teal: #1A7A8C;
+  --jpm-teal-dark: #145E6B;
+  --jpm-ink: #1A2E3A;
+  --jpm-muted: #5A6D7E;
+  --jpm-bar: #F5F5F0;
+  display: grid;
+  grid-template-columns: 460px 1fr;
+  gap: var(--space-huge);
+  align-items: center;
+  background: var(--canvas);
+  font-family: var(--font-sans);
+}
+
+.jpm-hero * { font-family: var(--font-sans); }
+
+.jpm-hero__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--space-xl) 0;
+}
+
+.jpm-hero__title {
+  font-size: 56px;
+  font-weight: 300;
+  line-height: 1.08;
+  letter-spacing: -1.4px;
+  color: var(--jpm-ink);
+  margin-bottom: var(--space-lg);
+}
+
+.jpm-hero__desc {
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
+  color: var(--jpm-muted);
+  margin-bottom: var(--space-xxl);
+  max-width: 460px;
+}
+
+.jpm-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  padding: 0 28px;
+  border-radius: 4px;
+  background: var(--jpm-teal);
+  color: var(--on-primary);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background 0.2s var(--ease-out), transform 0.2s var(--ease-out);
+}
+
+.jpm-hero__cta:hover { background: var(--jpm-teal-dark); color: var(--on-primary); transform: translateY(-1px); }
+.jpm-hero__cta:active { transform: translateY(0); }
+
+.jpm-hero__image {
+  overflow: hidden;
+  border-radius: 0;
+  background: var(--canvas-soft);
+}
+
+.jpm-hero__image img {
+  display: block;
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+}
+
+/* Bottom tab bar — light grey with 3 headlines, first active teal underline */
+.jpm-hero__tabs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background: var(--jpm-bar);
+  border-top: 1px solid var(--hairline);
+  margin-top: var(--space-huge);
+}
+
+.jpm-hero__tab {
+  position: relative;
+  padding: var(--space-lg) var(--space-xl);
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--ink-mute);
+  text-align: left;
+  background: none;
+  border: none;
+  border-right: 1px solid var(--hairline);
+  cursor: pointer;
+  transition: color 0.2s var(--ease-out);
+}
+
+.jpm-hero__tab:last-child { border-right: none; }
+.jpm-hero__tab:hover { color: var(--ink); }
+.jpm-hero__tab.is-active { color: var(--ink); font-weight: 600; }
+.jpm-hero__tab.is-active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: var(--space-xl);
+  right: var(--space-xl);
+  height: 3px;
+  background: var(--jpm-teal);
+}
+
+/* Hide mesh gradient when jpm-hero is used inside mesh-hero */
+.mesh-hero:has(.jpm-hero) .mesh-bg::before { display: none; }
+.mesh-hero:has(.jpm-hero) { background: var(--canvas); }
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .jpm-hero { grid-template-columns: 1fr; gap: var(--space-xl); }
+  .jpm-hero__image { order: -1; }
+  .jpm-hero__image img { height: 400px; }
+  .jpm-hero__tabs { margin-top: var(--space-xl); }
+}
+
+@media (max-width: 768px) {
+  .jpm-hero__title { font-size: 36px; letter-spacing: -0.9px; }
+  .jpm-hero__image img { height: 300px; }
+  .jpm-hero__tabs { grid-template-columns: 1fr; }
+  .jpm-hero__tab { border-right: none; border-bottom: 1px solid var(--hairline); padding: var(--space-md) var(--space-lg); }
+  .jpm-hero__tab:last-child { border-bottom: none; }
+  .jpm-hero__tab.is-active::after { left: var(--space-lg); right: auto; width: 80px; }
+}
+
+@media (max-width: 480px) {
+  .jpm-hero__title { font-size: 28px; letter-spacing: -0.7px; }
+}

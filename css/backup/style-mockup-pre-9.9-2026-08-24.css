@@ -771,12 +771,12 @@ a:hover { color: var(--primary-deep); }
 .method-layout__aside {
   position: sticky; top: calc(var(--nav-height) + var(--space-xl));
   padding: var(--space-xl);
-  background: var(--canvas-soft);
-  border: 1px solid #E6EBF1;
-  border-radius: 12px;
+  background:
+    radial-gradient(circle at 15% 15%, color-mix(in srgb, var(--primary) 10%, transparent), transparent 55%),
+    radial-gradient(circle at 85% 80%, color-mix(in srgb, var(--ruby) 8%, transparent), transparent 50%);
 }
 
-.method-layout__aside .mockup-card { border: 1px solid #E6EBF1; box-shadow: 0 1px 2px rgba(16,24,40,0.05); background: var(--canvas); }
+.method-layout__aside .mockup-card { border: none; box-shadow: var(--shadow-lg); }
 
 /* --- Method Steps --- */
 .method-step { position: relative; padding-left: var(--space-xxl); }
@@ -956,14 +956,11 @@ a:hover { color: var(--primary-deep); }
 
 .tradingview-widget-container { position: relative; width: 100%; }
 
-/* --- Mockup Card (Stripe-inspired Tier 1 — 9.9) --- */
+/* --- Mockup Card (Stripe-style product UI composite) --- */
 .mockup-card {
-  background: var(--canvas);
-  border: 1px solid #E6EBF1;
-  border-radius: 12px;
-  padding: var(--space-xl);
-  box-shadow: 0 1px 2px rgba(16,24,40,0.05);
-  overflow: hidden;
+  background: var(--canvas); border: 1px solid var(--hairline);
+  border-radius: var(--radius-lg); padding: var(--space-xl);
+  box-shadow: var(--shadow-md); overflow: hidden;
 }
 
 .mockup-header {
@@ -971,69 +968,69 @@ a:hover { color: var(--primary-deep); }
   flex-wrap: wrap;
 }
 
-.mockup-dot { display: none; }
+.mockup-dot {
+  width: 10px; height: 10px; border-radius: var(--radius-pill);
+}
 
-.mockup-label { color: #475467; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; }
+.mockup-dot:nth-child(1) { background: var(--ruby); }
+.mockup-dot:nth-child(2) { background: var(--mesh-coral); }
+.mockup-dot:nth-child(3) { background: var(--primary); }
 
-/* --- Mockup Card: diagnostic dashboard (Stripe KPI strip) --- */
-.mockup-header-title { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: #475467; margin-left: 0; }
+.mockup-label { color: var(--ink-mute); }
+
+/* --- Mockup Card: diagnostic dashboard (index method section) --- */
+.mockup-header-title { font-size: 12px; color: var(--ink-mute); margin-left: var(--space-sm); }
 
 .mockup-status {
   display: inline-flex; align-items: center; gap: 6px; margin-left: auto;
-  font-size: 10px; font-weight: 500; letter-spacing: 0.04em;
-  color: #667085;
-  background: #F2F4F7;
-  border: 1px solid #E6EBF1;
+  font-size: 10px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase;
+  color: var(--primary-deep);
+  background: var(--primary-bg-subdued);
+  border: 1px solid color-mix(in srgb, var(--primary) 30%, var(--brand-white));
   border-radius: var(--radius-pill); padding: 3px 10px;
 }
-.mockup-status-dot { display: none; }
+.mockup-status-dot { width: 6px; height: 6px; border-radius: var(--radius-pill); background: var(--primary); }
 
 .mockup-index {
-  background: var(--canvas);
-  border: 1px solid #E6EBF1;
-  border-radius: 8px;
+  background: linear-gradient(150deg, var(--primary-bg-subdued), color-mix(in srgb, var(--brand-secondary) 7%, var(--brand-white)));
   padding: var(--space-lg); margin-bottom: var(--space-lg);
 }
 .mockup-index-meta { display: flex; align-items: baseline; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; }
 .mockup-index-value {
-  font-size: 24px; font-weight: 700; line-height: 1; letter-spacing: -0.02em;
-  color: #0F172A; font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on;
+  font-size: 44px; font-weight: 300; line-height: 1; letter-spacing: -1px;
+  color: var(--ink); font-feature-settings: 'tnum' on;
 }
-.mockup-index-denom { font-size: 14px; color: #667085; font-weight: 400; letter-spacing: 0; margin-left: 4px; }
-.mockup-index-status { font-size: 11px; font-weight: 500; color: #027A48; background: #ECFDF5; border: 1px solid #ABEFC6; border-radius: var(--radius-pill); padding: 2px 8px; }
-.mockup-index-status--warn { color: #B54708; background: #FFFAEB; border-color: #FEDF89; }
-.mockup-index-status--bad { color: #B42318; background: #FEF3F2; border-color: #FECDCA; }
-.mockup-index-date { font-size: 10px; color: #98A2B3; }
+.mockup-index-denom { font-size: 14px; color: var(--ink-mute); font-weight: 400; letter-spacing: 0; margin-left: 4px; }
+.mockup-index-status { font-size: 12.5px; font-weight: 500; color: var(--accent-text); }
+.mockup-index-date { font-size: 11px; color: var(--ink-mute); }
 
 .mockup-track {
-  position: relative; display: block; height: 6px; margin-top: var(--space-md);
-  background: #F2F4F7; border-radius: var(--radius-pill); overflow: hidden;
+  position: relative; display: block; height: 8px; margin-top: var(--space-md);
+  background: var(--track-bg); border-radius: var(--radius-pill); overflow: hidden;
 }
 .mockup-track-fill {
   position: absolute; top: 0; left: 0; height: 100%; border-radius: var(--radius-pill);
   width: var(--w, 0%);
 }
-.mockup-track-fill--current { background: #0F172A; }
-.mockup-track-fill--target { background: #EAECF0; }
-.mockup-track--index { height: 6px; margin-top: var(--space-md); }
-.mockup-track-fill--index { background: #0F172A; }
+.mockup-track-fill--current { background: var(--primary); }
+.mockup-track-fill--target { background: color-mix(in srgb, var(--primary) 32%, var(--brand-white)); }
+.mockup-track--index { height: 10px; margin-top: var(--space-md); }
+.mockup-track-fill--index { background: linear-gradient(90deg, var(--primary), var(--primary-bright)); }
 
 .mockup-metrics { display: flex; flex-direction: column; gap: var(--space-md); }
-.mockup-metric { padding-bottom: var(--space-md); border-bottom: 1px solid #EAECF0; }
+.mockup-metric { padding-bottom: var(--space-md); border-bottom: 1px solid var(--hairline); }
 .mockup-metric:last-child { border-bottom: none; padding-bottom: 0; }
 .mockup-metric-head { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; }
-.mockup-metric-head .mockup-label { font-size: 12px; font-weight: 500; letter-spacing: 0.02em; text-transform: none; color: #344054; }
-.mockup-metric-values { display: inline-flex; align-items: baseline; gap: var(--space-xs); font-variant-numeric: tabular-nums; font-feature-settings: 'tnum' on; flex-wrap: wrap; }
-.mockup-metric-values em { font-style: normal; font-weight: 400; color: #667085; font-size: 13px; }
-.mockup-metric-values strong { font-weight: 600; color: #101828; font-size: 14px; }
-.mockup-arrow { color: #667085; font-size: 12px; }
+.mockup-metric-head .mockup-label { font-size: 12.5px; }
+.mockup-metric-values { display: inline-flex; align-items: baseline; gap: var(--space-xs); font-feature-settings: 'tnum' on; flex-wrap: wrap; }
+.mockup-metric-values em { font-style: normal; font-weight: 400; color: var(--ink-mute-2); font-size: 13px; }
+.mockup-metric-values strong { font-weight: 600; color: var(--ink); font-size: 14px; }
+.mockup-arrow { color: var(--primary); font-size: 12px; }
 .mockup-delta {
   display: inline-block; margin-left: var(--space-xs);
-  font-size: 11px; font-weight: 500; border-radius: var(--radius-pill); padding: 2px 8px; border: 1px solid transparent;
+  font-size: 11px; font-weight: 600; border-radius: var(--radius-pill); padding: 2px 8px;
 }
-.mockup-delta--good { background: #ECFDF5; color: #027A48; border-color: #ABEFC6; }
-.mockup-delta--bad { background: #FEF3F2; color: #B42318; border-color: #FECDCA; }
-.mockup-delta--warn { background: #FFFAEB; color: #B54708; border-color: #FEDF89; }
+.mockup-delta--good { background: var(--primary-bg-subdued); color: var(--primary-deep); }
 
 .mockup-divider { height: 1px; background: var(--hairline); margin: var(--space-lg) 0 var(--space-md); }
 
