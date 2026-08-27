@@ -846,39 +846,35 @@ a:hover { color: var(--primary-deep); }
 
 .tabs {
   display: flex; gap: var(--space-xxl);
-  border-bottom: 1px solid var(--hairline);
+  border-bottom: 1px solid #E6EBF1;
 }
 
 .tab {
   appearance: none; background: none; border: 0; cursor: pointer;
   font-family: var(--font-sans); font-size: 15px; font-weight: 600;
   color: var(--ink-mute); padding: var(--space-md) 0;
-  margin-bottom: -1px; border-bottom: 3px solid transparent;
-  transition: color 0.25s var(--ease-out), border-color 0.25s var(--ease-out);
+  margin-bottom: -1px; border-bottom: 1.5px solid transparent;
+  transition: color 220ms cubic-bezier(0.23, 1, 0.32, 1), border-color 220ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .tab:hover { color: var(--ink); }
-.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--brand-primary); }
+.tab[aria-selected="true"] { color: var(--ink); border-bottom-color: #0F172A; }
 
 .panels { margin-top: var(--space-xxl); }
 
 .panel { display: none; position: relative; }
-.panel.is-active { display: block; animation: panel-in 0.45s var(--ease-out); }
+.panel.is-active { display: grid; grid-template-columns: 7fr 5fr; gap: 0; align-items: center; animation: panel-in 0.22s cubic-bezier(0.23, 1, 0.32, 1); background: linear-gradient(90deg, transparent 0 calc(58% - 16px), color-mix(in srgb, var(--primary) 6%, var(--canvas-soft)) calc(58% + 16px) 100%); }
 
 .panel > img {
-  display: block; width: 100%; height: 380px; object-fit: cover;
-  border-radius: var(--radius-img);
+  display: block; width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover;
+  border-radius: 12px 0 0 12px; border: 1px solid #E6EBF1; border-right: none;
 }
 
 .panel-card {
-  position: absolute; top: 50%; left: var(--space-xl);
-  transform: translateY(-50%);
-  background: var(--canvas);
-  width: 48%; max-width: 520px; min-height: 56%;
+  position: relative; z-index: 1; width: 100%; max-width: 100%; min-height: auto;
   display: flex; flex-direction: column; justify-content: center;
-  padding: var(--space-xl) var(--space-xxl);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
+  padding: 32px; overflow: hidden;
+  background: transparent; border: none; border-radius: 0; box-shadow: none;
 }
 
 .panel-card h3 { font-size: 24px; line-height: 1.25; margin-bottom: var(--space-md); }
@@ -887,7 +883,7 @@ a:hover { color: var(--primary-deep); }
 .panel-card .btn { align-self: flex-start; padding: 0 16px; }
 
 .fold-arrow {
-  --fold-arrow-size: 48px;
+  --fold-arrow-size: 36px;
   --fold-arrow-gap: var(--space-md);
   --fold-arrow-nudge: 3px;
   --fold-arrow-glass: rgba(255, 255, 255, 0.4);
@@ -895,11 +891,11 @@ a:hover { color: var(--primary-deep); }
   z-index: 5;
   width: var(--fold-arrow-size); height: var(--fold-arrow-size);
   display: grid; place-items: center;
-  border: 1px solid var(--hairline); border-radius: var(--radius-pill);
-  background: var(--canvas-glass); box-shadow: var(--shadow-md);
+  border: 1px solid #E6EBF1; border-radius: var(--radius-pill);
+  background: #FFFFFF; box-shadow: 0 1px 2px rgba(16,24,40,0.05);
   color: var(--ink); cursor: pointer;
-  opacity: 0; visibility: hidden; pointer-events: none;
-  transition: opacity 0.25s var(--ease-out), visibility 0.25s var(--ease-out), background 0.25s var(--ease-out), color 0.25s var(--ease-out);
+  opacity: 1; visibility: visible; pointer-events: auto;
+  transition: border-color 220ms cubic-bezier(0.23, 1, 0.32, 1), background 220ms cubic-bezier(0.23, 1, 0.32, 1), color 220ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .fold-arrow svg {
@@ -915,9 +911,8 @@ a:hover { color: var(--primary-deep); }
 .fold-arrow:focus-visible { opacity: 1; visibility: visible; pointer-events: auto; }
 
 .fold-arrow:hover {
-  background: var(--fold-arrow-glass);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  border-color: #0F172A;
+  background: #FFFFFF;
   color: var(--ink);
 }
 
@@ -1034,6 +1029,10 @@ a:hover { color: var(--primary-deep); }
 .mockup-delta--good { background: #ECFDF5; color: #027A48; border-color: #ABEFC6; }
 .mockup-delta--bad { background: #FEF3F2; color: #B42318; border-color: #FECDCA; }
 .mockup-delta--warn { background: #FFFAEB; color: #B54708; border-color: #FEDF89; }
+
+.sub-dialog .mockup-card { margin: var(--space-lg) 0; }
+.sub-dialog .mockup-card .mockup-index { border: none; padding: 0; margin-bottom: var(--space-md); background: transparent; }
+.sub-dialog .mockup-card .mockup-track--index { height: 6px; }
 
 .mockup-divider { height: 1px; background: var(--hairline); margin: var(--space-lg) 0 var(--space-md); }
 
@@ -1195,11 +1194,8 @@ a:hover { color: var(--primary-deep); }
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: 1fr 1fr; }
-  .panel-card {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%; max-width: 480px; height: auto;
-  }
+  .panel.is-active { gap: 24px; }
+  .panel-card { padding: 24px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .steps-row { grid-template-columns: 1fr; gap: var(--space-xl); }
   .values-grid { grid-template-columns: 1fr 1fr; }
@@ -1247,15 +1243,14 @@ a:hover { color: var(--primary-deep); }
   .tabs { gap: var(--space-xl); overflow-x: auto; scrollbar-width: none; }
   .tabs::-webkit-scrollbar { display: none; }
   .tab { white-space: nowrap; }
-  .panel > img { display: block; width: 100%; height: 340px; object-fit: cover; }
+  .panel.is-active { grid-template-columns: 1fr; gap: 32px; background: transparent; }
+  .panel > img { aspect-ratio: 4 / 3; height: auto; border: 1px solid #E6EBF1; border-radius: 12px; }
   .panel-card {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%);
-    width: calc(100% - var(--space-xxl)); max-width: 480px; height: auto;
-    justify-content: center; padding: var(--space-xl);
-    background: var(--canvas-glass);
+    position: static; width: 100%; max-width: 100%; height: auto;
+    transform: none; left: auto; top: auto;
+    padding: 24px; background: var(--canvas); border: 1px solid #E6EBF1; border-radius: 12px; box-shadow: none;
   }
-  .fold-arrow { --fold-arrow-size: 40px; }
+  .fold-arrow { --fold-arrow-size: 36px; }
   .stat-value { font-size: 32px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
   .method-layout { grid-template-columns: 1fr; gap: var(--space-xxl); }

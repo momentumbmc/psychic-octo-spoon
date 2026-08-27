@@ -140,6 +140,26 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // ---- Business wireframe lazy animation (starts on scroll into view) ----
+  // Drop-in: external wireframe.svg via #wireframe-mount — future: just overwrite assets/about/wireframe.svg
+  const wireframeMount = document.getElementById('wireframe-mount');
+  if (wireframeMount) {
+    fetch('assets/about/wireframe.svg').then(function (r) { return r.text(); }).then(function (svgText) {
+      wireframeMount.innerHTML = svgText;
+      var injected = wireframeMount.querySelector('.wireframe-svg');
+      if (injected) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              injected.classList.add('is-revealed');
+              obs.disconnect();
+            }
+          });
+        }, { threshold: 0.2 });
+        obs.observe(injected);
+      }
+    }).catch(function () {});
+  }
+  // Fallback for any inline wireframe-svg (backwards compat) — also covers #wireframe-mount fallback when fetch fails (file://)
   const wireframeSvgs = document.querySelectorAll('.wireframe-svg');
   wireframeSvgs.forEach(function (wireframeSvg) {
     const wireframeObserver = new IntersectionObserver(function (entries) {
