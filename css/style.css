@@ -87,7 +87,7 @@
   --space-xxl: 32px;
   --space-huge: 64px;
   /* Corner radius — change --radius once to restyle every corner site-wide */
-  --radius: 5px;
+  --radius: 8px;
   --radius-lg: var(--radius);
   --radius-card: var(--radius);
   --radius-btn: var(--radius);
