@@ -945,6 +945,189 @@ a:hover { color: var(--primary-deep); }
 
 .stat-label { font-size: 14px; color: var(--ink-mute); line-height: 1.4; }
 
+/* ============================================================
+   EXECUTIVE DIAGNOSTIC COCKPIT — Tier 1 Corporate / Fintech
+   Only used on index.html between hero and content sections
+   ============================================================ */
+.exec-cockpit {
+  background: var(--canvas);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  box-shadow: 0 2px 16px rgba(5,28,44,0.05), 0 1px 2px rgba(5,28,44,0.04);
+  overflow: hidden;
+  font-family: var(--font-sans);
+}
+
+.exec-cockpit__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 24px;
+  background: color-mix(in srgb, var(--brand-secondary) 3%, var(--canvas));
+  border-bottom: 1px solid var(--hairline);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.exec-cockpit__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.exec-cockpit__dot {
+  width: 7px; height: 7px;
+  background: #10B981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 3px rgba(16,185,129,.18);
+  animation: execPulse 2.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes execPulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgba(16,185,129,.18); }
+  50%       { box-shadow: 0 0 0 6px rgba(16,185,129,.06); }
+}
+
+.exec-cockpit__badge-text {
+  font-size: 11px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--ink-secondary);
+}
+
+.exec-cockpit__meta {
+  font-size: 12px; color: var(--ink-mute); letter-spacing: 0.01em;
+}
+
+.exec-cockpit__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--hairline);
+  gap: 1px;
+}
+
+.exec-card {
+  background: var(--canvas);
+  padding: 22px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: background 0.25s var(--ease-out);
+}
+
+.exec-card:hover {
+  background: color-mix(in srgb, var(--primary) 2.5%, var(--canvas));
+}
+
+.exec-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  gap: 6px;
+}
+
+.exec-card__eyebrow {
+  font-size: 10.5px; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.09em;
+  color: var(--ink-mute);
+}
+
+.exec-card__pill {
+  font-size: 10px; font-weight: 600;
+  padding: 2px 7px; border-radius: 4px;
+  background: var(--track-bg); color: var(--ink-secondary);
+  letter-spacing: 0.03em; white-space: nowrap;
+}
+
+.exec-card__pill--blue { background: rgba(24,104,219,.09); color: var(--primary); }
+.exec-card__pill--green { background: rgba(16,185,129,.1); color: #0E9664; }
+
+.exec-card__metric-row {
+  display: flex;
+  align-items: baseline;
+  gap: 7px;
+  margin-bottom: 8px;
+}
+
+.exec-card__num {
+  font-size: 36px; font-weight: 400; line-height: 1;
+  letter-spacing: -1.2px;
+  color: var(--brand-secondary) !important;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0 !important;
+}
+
+.exec-card__unit {
+  font-size: 12.5px; font-weight: 600;
+  color: var(--primary);
+  line-height: 1.2;
+}
+
+.exec-card__desc {
+  font-size: 12.5px; line-height: 1.55;
+  color: var(--ink-secondary);
+  margin: 0 0 14px;
+  flex-grow: 1;
+}
+
+.exec-card__track {
+  height: 3px;
+  background: var(--track-bg);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.exec-card__track--seg {
+  display: flex; gap: 4px;
+  background: transparent; overflow: visible;
+}
+
+.exec-card__fill {
+  height: 100%; border-radius: 2px;
+  background: var(--primary);
+}
+
+.exec-card__fill--teal {
+  background: linear-gradient(90deg, var(--primary), #10B981);
+}
+
+.exec-card__seg {
+  flex: 1; height: 100%; border-radius: 2px;
+  background: var(--primary);
+}
+
+.exec-card__note {
+  font-size: 10.5px; font-weight: 500;
+  color: var(--ink-mute);
+  letter-spacing: 0.01em;
+}
+
+.exec-cockpit__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  background: color-mix(in srgb, var(--canvas-soft) 60%, var(--canvas));
+  border-top: 1px solid var(--hairline);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.exec-cockpit__insight {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--ink-secondary);
+  line-height: 1.4;
+}
+
+.exec-cockpit__insight svg { color: var(--primary); flex-shrink: 0; }
+.exec-cockpit__insight strong { color: var(--ink); font-weight: 600; }
+
+
 /* --- Ticker strip (TradingView) --- */
 .logo-strip {
   padding: var(--space-xxl) 0; overflow: hidden; user-select: none;
@@ -1206,6 +1389,7 @@ a:hover { color: var(--primary-deep); }
   .hero-image-wrap { order: -1; }
   .hero-text-col { padding: var(--space-xxl) 0; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-xl); }
+  .exec-cockpit__grid { grid-template-columns: repeat(2, 1fr); }
   .hero-image-wrap img { height: 300px; }
 }
 
@@ -1254,6 +1438,9 @@ a:hover { color: var(--primary-deep); }
   .fold-arrow { --fold-arrow-size: 36px; }
   .stat-value { font-size: 32px; }
   .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-lg); }
+  .exec-cockpit__grid { grid-template-columns: 1fr; }
+  .exec-cockpit__header, .exec-cockpit__bottom { padding: 12px 16px; flex-direction: column; align-items: flex-start; gap: 8px; }
+  .exec-card { padding: 20px 16px; }
   .method-layout { grid-template-columns: 1fr; gap: var(--space-xxl); }
   .method-layout__aside { position: static; }
   .sub-card { padding: var(--space-xl); }

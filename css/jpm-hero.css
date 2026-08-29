@@ -1,6 +1,6 @@
 /* ============================================================
    JPM Hero — 100% clone of JPMorgan US housing hero
-   Screenshot: header left / description / READ MORE teal / image right + bottom tab bar
+   Screenshot: header left / description / READ MORE teal / image right
    Namespace .jpm-hero — isolated, IBM Plex Sans forced
    Reusable for about / contact heroes
    ============================================================ */
@@ -81,43 +81,6 @@
   object-fit: cover;
 }
 
-/* Bottom tab bar — light grey with 3 headlines, first active teal underline */
-.jpm-hero__tabs {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background: var(--jpm-bar);
-  border-top: 1px solid var(--hairline);
-  margin-top: var(--space-huge);
-}
-
-.jpm-hero__tab {
-  position: relative;
-  padding: var(--space-lg) var(--space-xl);
-  font-size: 13px;
-  font-weight: 500;
-  line-height: 1.4;
-  color: var(--ink-mute);
-  text-align: left;
-  background: none;
-  border: none;
-  border-right: 1px solid var(--hairline);
-  cursor: pointer;
-  transition: color 0.2s var(--ease-out);
-}
-
-.jpm-hero__tab:last-child { border-right: none; }
-.jpm-hero__tab:hover { color: var(--ink); }
-.jpm-hero__tab.is-active { color: var(--ink); font-weight: 600; }
-.jpm-hero__tab.is-active::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: var(--space-xl);
-  right: var(--space-xl);
-  height: 3px;
-  background: var(--jpm-teal);
-}
-
 /* Hide mesh gradient when jpm-hero is used inside mesh-hero */
 .mesh-hero:has(.jpm-hero) .mesh-bg::before { display: none; }
 .mesh-hero:has(.jpm-hero) { background: var(--canvas); }
@@ -127,16 +90,11 @@
   .jpm-hero { grid-template-columns: 1fr; gap: var(--space-xl); }
   .jpm-hero__image { order: -1; }
   .jpm-hero__image img { height: 400px; }
-  .jpm-hero__tabs { margin-top: var(--space-xl); }
 }
 
 @media (max-width: 768px) {
   .jpm-hero__title { font-size: 36px; letter-spacing: -0.9px; }
   .jpm-hero__image img { height: 300px; }
-  .jpm-hero__tabs { grid-template-columns: 1fr; }
-  .jpm-hero__tab { border-right: none; border-bottom: 1px solid var(--hairline); padding: var(--space-md) var(--space-lg); }
-  .jpm-hero__tab:last-child { border-bottom: none; }
-  .jpm-hero__tab.is-active::after { left: var(--space-lg); right: auto; width: 80px; }
 }
 
 @media (max-width: 480px) {

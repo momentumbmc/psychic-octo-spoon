@@ -64,26 +64,105 @@
       </div>
     </section>
 
-    <!-- ======== STATS ======== -->
-    <section class="section section-soft">
+<!-- ======== EXECUTIVE DIAGNOSTIC COCKPIT ======== -->
+    <section class="section section-soft" style="padding: var(--space-xl) 0;">
       <div class="container">
-        <div class="stats-grid stagger-group">
-          <div>
-            <div class="stat-value" data-target="200" data-suffix="+">0</div>
-            <p class="stat-label">Clinics diagnosed across three verticals</p>
+        <div class="exec-cockpit fade-in">
+
+          <!-- Header strip -->
+          <div class="exec-cockpit__header">
+            <div class="exec-cockpit__badge">
+              <span class="exec-cockpit__dot" aria-hidden="true"></span>
+              <span class="exec-cockpit__badge-text">Clinical &amp; Operational Yield Index</span>
+            </div>
+            <div class="exec-cockpit__meta">
+              Healthcare Engineering &middot; Workforce Optimization &middot; Strategic Procurement
+            </div>
           </div>
-          <div>
-            <div class="stat-value" data-target="3" data-suffix="">0</div>
-            <p class="stat-label">Integrated service verticals, one system</p>
+
+          <!-- Four metric cards -->
+          <div class="exec-cockpit__grid stagger-group">
+
+            <div class="exec-card">
+              <div class="exec-card__top">
+                <span class="exec-card__eyebrow">Diagnostic Footprint</span>
+                <span class="exec-card__pill">System Audit</span>
+              </div>
+              <div class="exec-card__metric-row">
+                <span class="stat-value exec-card__num" data-target="200" data-suffix="+">0</span>
+                <span class="exec-card__unit">Clinics &amp; Facilities</span>
+              </div>
+              <p class="exec-card__desc">Multi-layer operational and biomedical diagnostics completed across independent health networks.</p>
+              <div class="exec-card__track">
+                <div class="exec-card__fill" style="width:100%"></div>
+              </div>
+              <span class="exec-card__note">Tier-1 &amp; Tier-2 Hospitals</span>
+            </div>
+
+            <div class="exec-card">
+              <div class="exec-card__top">
+                <span class="exec-card__eyebrow">Measurable Yield</span>
+                <span class="exec-card__pill exec-card__pill--green">Recovery Rate</span>
+              </div>
+              <div class="exec-card__metric-row">
+                <span class="stat-value exec-card__num" data-target="94" data-suffix="%">0</span>
+                <span class="exec-card__unit">Within 6 Months</span>
+              </div>
+              <p class="exec-card__desc">Of client organizations document margin recovery, reduced waste, and stabilized staff retention.</p>
+              <div class="exec-card__track">
+                <div class="exec-card__fill exec-card__fill--teal" style="width:94%"></div>
+              </div>
+              <span class="exec-card__note">Verified Clinical ROI</span>
+            </div>
+
+            <div class="exec-card">
+              <div class="exec-card__top">
+                <span class="exec-card__eyebrow">System Architecture</span>
+                <span class="exec-card__pill exec-card__pill--blue">Single Flywheel</span>
+              </div>
+              <div class="exec-card__metric-row">
+                <span class="stat-value exec-card__num" data-target="3" data-suffix="">0</span>
+                <span class="exec-card__unit">Integrated Verticals</span>
+              </div>
+              <p class="exec-card__desc">Engineering, workforce, and procurement operating as one compounding system — not three silos.</p>
+              <div class="exec-card__track exec-card__track--seg">
+                <span class="exec-card__seg"></span>
+                <span class="exec-card__seg"></span>
+                <span class="exec-card__seg"></span>
+              </div>
+              <span class="exec-card__note">Zero Siloed Overhead</span>
+            </div>
+
+            <div class="exec-card">
+              <div class="exec-card__top">
+                <span class="exec-card__eyebrow">Operating Depth</span>
+                <span class="exec-card__pill">Field Pedigree</span>
+              </div>
+              <div class="exec-card__metric-row">
+                <span class="stat-value exec-card__num" data-target="15" data-suffix="+">0</span>
+                <span class="exec-card__unit">Years In Operations</span>
+              </div>
+              <p class="exec-card__desc">Engineers and operators who managed hospital floors, biomedical infrastructure, and procurement cycles.</p>
+              <div class="exec-card__track">
+                <div class="exec-card__fill" style="width:85%"></div>
+              </div>
+              <span class="exec-card__note">Practitioners, Not Theorists</span>
+            </div>
+
           </div>
-          <div>
-            <div class="stat-value" data-target="94" data-suffix="%">0</div>
-            <p class="stat-label">Of engagements show measurable improvement within 6 months</p>
+
+          <!-- Bottom insight banner -->
+          <div class="exec-cockpit__bottom">
+            <div class="exec-cockpit__insight">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+              <span><strong>Root-Cause First:</strong> We audit the system before recommending a single operational or commercial change.</span>
+            </div>
+            <div class="exec-cockpit__insight">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <span><strong>Sustained Architecture:</strong> Changes engineered to compound across multi-year operational cycles.</span>
+            </div>
           </div>
-          <div>
-            <div class="stat-value" data-target="15" data-suffix="+">0</div>
-            <p class="stat-label">Years of combined healthcare operations experience</p>
-          </div>
+
         </div>
       </div>
     </section>
