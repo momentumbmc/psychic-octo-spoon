@@ -419,6 +419,7 @@ a:hover { color: var(--primary-deep); }
 
 /* --- Grid --- */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-xxl); }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-xxl); }
 .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: var(--space-xxl); }
 
 /* --- Sub-Service Cards (Flowbase-style card + dialog popup) --- */
@@ -1193,7 +1194,7 @@ a:hover { color: var(--primary-deep); }
 
 /* --- Responsive --- */
 @media (max-width: 1024px) {
-  .grid-4 { grid-template-columns: 1fr 1fr; }
+  .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
   .panel.is-active { gap: 24px; }
   .panel-card { padding: 24px; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
@@ -1225,7 +1226,7 @@ a:hover { color: var(--primary-deep); }
   .nav-mobile-toggle { display: block; }
   .nav-cta { display: none; }
 
-  .grid-2, .grid-4, .values-grid { grid-template-columns: 1fr; }
+  .grid-2, .grid-3, .grid-4, .values-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; gap: var(--space-xl); }
   .footer-bottom { flex-direction: column; gap: var(--space-sm); text-align: center; }
   .section { padding: var(--space-xxl) 0; }

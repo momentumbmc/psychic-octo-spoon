@@ -112,8 +112,7 @@
           <p class="body-lg section-body">Cost optimization here runs in three sessions, moving from a one-time audit to
             an ongoing program. Each card below expands into full detail on request.</p>
         </div>
-        <div class="grid-3 stagger-group mt-xl"
-          style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-xxl);">
+        <div class="grid-3 stagger-group mt-xl">
           <button type="button" class="sub-card" data-dialog-id="sub-dialog-cost-1" aria-haspopup="dialog">
             <span class="sub-card__icon"><img src="assets/cost-optimization/icon-audit.svg" width="24" height="24"
                 alt="" aria-hidden="true"></span>
@@ -155,287 +154,287 @@
                 aria-hidden="true"></span>
           </button>
         </div>
+
+        <!-- Dialogs for Cost Optimization -->
+        <dialog class="sub-dialog" id="sub-dialog-cost-1" aria-labelledby="sub-dialog-cost-1-title">
+          <div class="sub-dialog__head">
+            <button type="button" class="sub-dialog__close" aria-label="Close dialog"><svg width="20" height="20"
+                viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                aria-hidden="true">
+                <line x1="5" y1="5" x2="15" y2="15" />
+                <line x1="15" y1="5" x2="5" y2="15" />
+              </svg></button>
+            <p class="micro-cap sub-dialog__tag">Consumables &amp; Disposables Audit</p>
+            <h3 id="sub-dialog-cost-1-title">The Audit That Finds What Your Invoices Don't Show</h3>
+          </div>
+          <div class="sub-dialog__content">
+            <div class="sub-dialog__body">
+              <p>This is a direct, department-by-department review of recurring consumable and disposable spend, starting
+                with the highest-volume areas: CSSD, operating theatres, and general wards. Every recurring line item gets
+                checked against three questions: does the current specification need to be this expensive to do its clinical
+                job, is there an equivalent alternative that costs less, and is this something that could be made in-house
+                instead of purchased pre-made. None of those questions get asked in a typical procurement cycle, where the
+                default is to reorder what was ordered last time.</p>
+              <p>The kind of result this finds is well documented, not speculative. A peer-reviewed CSSD cost study found
+                six-figure rupee monthly savings from just two reprocessed items. A separate multi-year hospital study found
+                a modified inventory system cut weekly consumable costs by close to half. These aren't projections. They're
+                what a proper audit of this specific spend category tends to turn up.</p>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-header">
+                <span class="mockup-header-title">CSSD Audit — As of Q2'26 · n=1 tertiary hospital</span>
+                <span class="mockup-status">₹94k/mo · 2 items</span>
+              </div>
+              <div class="mockup-metrics">
+                <div class="mockup-metric">
+                  <div class="mockup-metric-head">
+                    <span class="mockup-label">Dressing pads (in-house)</span>
+                    <span class="mockup-metric-values"><strong>₹70,377</strong><span
+                        class="mockup-delta mockup-delta--good">/mo saved</span></span>
+                  </div>
+                  <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--current"
+                      style="--w: 74%;"></span><span class="mockup-track-fill mockup-track-fill--target"
+                      style="--w: 100%;"></span></div>
+                </div>
+                <div class="mockup-metric">
+                  <div class="mockup-metric-head">
+                    <span class="mockup-label">Gauze swabs (in-house)</span>
+                    <span class="mockup-metric-values"><strong>₹24,104</strong><span
+                        class="mockup-delta mockup-delta--good">/mo saved</span></span>
+                  </div>
+                  <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--current"
+                      style="--w: 25%;"></span><span class="mockup-track-fill mockup-track-fill--target"
+                      style="--w: 100%;"></span></div>
+                </div>
+                <div class="mockup-metric">
+                  <div class="mockup-metric-head">
+                    <span class="mockup-label">Inventory system — weekly cost</span>
+                    <span class="mockup-metric-values"><em>QAR 31k</em><span class="mockup-arrow">→</span><strong>QAR
+                        16k</strong><span class="mockup-delta mockup-delta--good">-48% · 3 yrs</span></span>
+                  </div>
+                  <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
+                      style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
+                      style="--w: 52%;"></span></div>
+                </div>
+              </div>
+              <div class="mockup-footnote">Source: Da Cruz &amp; J. CSSD optimisation SAGE 2022 n=1 tertiary corporate
+                hospital · Qatar Kanban PMC n=1 storeroom QAR 31k→16k 79%→90% satisfaction</div>
+            </div>
+            <div class="mockup-card mt-lg">
+              <div class="mockup-header">
+                <span class="mockup-header-title">Where It Lands — Weekly Spend</span>
+                <span class="mockup-status">-48%</span>
+              </div>
+              <div class="mockup-metrics">
+                <div class="mockup-metric">
+                  <div class="mockup-metric-head">
+                    <span class="mockup-label">Baseline</span>
+                    <span class="mockup-metric-values"><strong>QAR 31,000</strong></span>
+                  </div>
+                  <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
+                      style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
+                      style="--w: 100%;"></span></div>
+                </div>
+                <div class="mockup-metric">
+                  <div class="mockup-metric-head">
+                    <span class="mockup-label">After 3 years</span>
+                    <span class="mockup-metric-values"><strong>QAR 16,000</strong><span
+                        class="mockup-delta mockup-delta--good">-48%</span></span>
+                  </div>
+                  <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
+                      style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
+                      style="--w: 52%;"></span></div>
+                </div>
+              </div>
+              <div class="mockup-footnote">QAR 31,000 → QAR 16,000 weekly · 3-year implementation · Staff 79%→90% ·
+                Compliance 76%→95%</div>
+            </div>
+            <div class="sub-dialog__foot">
+              <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
+              <p class="sub-dialog__foot-note">Six-figure rupee savings from two items — not a projection, a peer-reviewed
+                finding.</p>
+            </div>
+          </div>
+        </dialog>
+
+        <dialog class="sub-dialog" id="sub-dialog-cost-2" aria-labelledby="sub-dialog-cost-2-title">
+          <div class="sub-dialog__head">
+            <button type="button" class="sub-dialog__close" aria-label="Close dialog"><svg width="20" height="20"
+                viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                aria-hidden="true">
+                <line x1="5" y1="5" x2="15" y2="15" />
+                <line x1="15" y1="5" x2="5" y2="15" />
+              </svg></button>
+            <p class="micro-cap sub-dialog__tag">Alternative Product Matching</p>
+            <h3 id="sub-dialog-cost-2-title">Same Clinical Outcome. Different Price Tag.</h3>
+          </div>
+          <div class="sub-dialog__content">
+            <div class="sub-dialog__body">
+              <p>In-house teams often default to original-manufacturer consumables out of habit, not clinical necessity. Our
+                biomedical engineers evaluate alternatives at the component level, the same rigor used in Biomedical
+                Engineering Consulting, to separate a genuine clinical requirement from a brand markup.</p>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-header">
+                <span class="mockup-header-title">Spec Equivalence — CSSD Packaging</span>
+                <span class="mockup-status">Like-for-like swap</span>
+              </div>
+              <table class="sub-dialog__table">
+                <thead>
+                  <tr>
+                    <th>Current approach</th>
+                    <th>Evaluated alternative</th>
+                    <th>Cost</th>
+                    <th>Clinical equivalence</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Soft-wrap sterile pack</td>
+                    <td>Rigid-container system</td>
+                    <td>~$190k/yr saved</td>
+                    <td>Equivalent — damaged-pack costs counted</td>
+                  </tr>
+                  <tr>
+                    <td>90-piece set (oversized)</td>
+                    <td>70-piece set (used)</td>
+                    <td>~$408k/yr saved</td>
+                    <td>Equivalent — 22% reduction</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="mockup-footnote">Source: B. Braun CSSD cost comparisons · Underlying German two-hospital
+                peer-reviewed study supports direction · Cross-check before publishing as THC claim</div>
+            </div>
+            <div class="sub-dialog__foot">
+              <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
+            </div>
+          </div>
+        </dialog>
+
+        <dialog class="sub-dialog" id="sub-dialog-cost-3" aria-labelledby="sub-dialog-cost-3-title">
+          <div class="sub-dialog__head">
+            <button type="button" class="sub-dialog__close" aria-label="Close dialog"><svg width="20" height="20"
+                viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                aria-hidden="true">
+                <line x1="5" y1="5" x2="15" y2="15" />
+                <line x1="15" y1="5" x2="5" y2="15" />
+              </svg></button>
+            <p class="micro-cap sub-dialog__tag">Continuous Cost Optimization</p>
+            <h3 id="sub-dialog-cost-3-title">A One-Time Audit Finds Savings. An Ongoing Program Keeps Them.</h3>
+          </div>
+          <div class="sub-dialog__content">
+            <div class="sub-dialog__body">
+              <p>Pricing and specs drift back toward the expensive default over time, as vendors change terms and staff turn
+                over. This session is the recurring version of the four above: a scheduled review instead of a single pass,
+                so new leakage gets caught in months, not rediscovered as a surprise next year.</p>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-header">
+                <span class="mockup-header-title">Continuous Program — Quarterly Review</span>
+                <span class="mockup-status">Retainer</span>
+              </div>
+              <p class="mockup-footnote" style="margin: 0;">No chart needed — recurring cadence note. Quarterly review of
+                consumable and disposable spend, so new leakage gets caught within months instead of a year later. Built on
+                THC three-part diagnostic method as ongoing check.</p>
+            </div>
+            <div class="sub-dialog__foot">
+              <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
+            </div>
+          </div>
+        </dialog>
+
+        <dialog class="sub-dialog" id="sub-dialog-cost-4" aria-labelledby="sub-dialog-cost-4-title">
+          <div class="sub-dialog__head">
+            <button type="button" class="sub-dialog__close" aria-label="Close dialog"><svg width="20" height="20"
+                viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                aria-hidden="true">
+                <line x1="5" y1="5" x2="15" y2="15" />
+                <line x1="15" y1="5" x2="5" y2="15" />
+              </svg></button>
+            <p class="micro-cap sub-dialog__tag">CSSD Packaging</p>
+            <h3 id="sub-dialog-cost-4-title">The Pouch-Versus-Wrap Decision Nobody Revisits</h3>
+          </div>
+          <div class="sub-dialog__content">
+            <div class="sub-dialog__body">
+              <p>Lightweight instruments like forceps and scissors don't always need a fully wrapped tray. Where a
+                peel-open pouch does the same sterilization job, the material cost difference compounds across thousands of
+                cycles a year, and it's exactly the kind of swap that stays unexamined once a packing protocol is set and
+                nobody's asked to revisit it.</p>
+            </div>
+            <div class="sub-dialog__foot">
+              <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
+            </div>
+          </div>
+        </dialog>
+
+        <dialog class="sub-dialog" id="sub-dialog-cost-5" aria-labelledby="sub-dialog-cost-5-title">
+          <div class="sub-dialog__head">
+            <button type="button" class="sub-dialog__close" aria-label="Close dialog"><svg width="20" height="20"
+                viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                aria-hidden="true">
+                <line x1="5" y1="5" x2="15" y2="15" />
+                <line x1="15" y1="5" x2="5" y2="15" />
+              </svg></button>
+            <p class="micro-cap sub-dialog__tag">Surgical Supply Waste</p>
+            <h3 id="sub-dialog-cost-5-title">The Supplies Opened and Never Used</h3>
+          </div>
+          <div class="sub-dialog__content">
+            <div class="sub-dialog__body">
+              <p>Several independent studies, including a 219-surgeon multicenter survey and a departmental audit at UCSF,
+                put unused-but-opened surgical supply waste at roughly a quarter of what gets opened for a given case. A
+                preference-card review, matching what gets used to what gets opened, is a standard fix. One documented case
+                cut waste on a single procedure type by over 90 percent.</p>
+            </div>
+            <div class="mockup-card">
+              <div class="mockup-header">
+                <span class="mockup-header-title">Surgical Waste — Multicenter &amp; UCSF</span>
+                <span class="mockup-status">~26% unused</span>
+              </div>
+              <div class="mockup-metrics">
+                <div class="mockup-metric">
+                  <div class="mockup-metric-head">
+                    <span class="mockup-label">Multicenter survey (219 surgeons)</span>
+                    <span class="mockup-metric-values"><strong>~26%</strong><span
+                        class="mockup-delta mockup-delta--warn">Opened &amp; unused</span></span>
+                  </div>
+                  <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
+                      style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
+                      style="--w: 26%;"></span></div>
+                </div>
+                <div class="mockup-metric">
+                  <div class="mockup-metric-head">
+                    <span class="mockup-label">UCSF neurosurgery audit</span>
+                    <span class="mockup-metric-values"><em>13.1%</em><span
+                        class="mockup-arrow">→</span><strong>$653</strong><span
+                        class="mockup-delta mockup-delta--bad">/case · $2.9M/yr</span></span>
+                  </div>
+                  <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
+                      style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
+                      style="--w: 13%;"></span></div>
+                </div>
+                <div class="mockup-metric">
+                  <div class="mockup-metric-head">
+                    <span class="mockup-label">Preference-card fix — Stanford Urology</span>
+                    <span class="mockup-metric-values"><strong>~92%</strong><span
+                        class="mockup-delta mockup-delta--good">Waste cut</span></span>
+                  </div>
+                  <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
+                      style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
+                      style="--w: 92%;"></span></div>
+                </div>
+              </div>
+              <div class="mockup-footnote">Source: 219-surgeon multicenter survey ~26% · UCSF neurosurgery $653/case 13.1%
+                $2.9M/yr · French audit 20.1% · Stanford 92% preference-card · Range 20-26% baseline vs 92% fix kept
+                distinct</div>
+            </div>
+            <div class="sub-dialog__foot">
+              <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
+            </div>
+          </div>
+        </dialog>
       </div>
     </section>
-
-    <!-- Dialogs for Cost Optimization -->
-    <dialog class="sub-dialog" id="sub-dialog-cost-1" aria-labelledby="sub-dialog-cost-1-title">
-      <div class="sub-dialog__head">
-        <button type="button" class="sub-dialog__close" aria-label="Close dialog"><svg width="20" height="20"
-            viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            aria-hidden="true">
-            <line x1="5" y1="5" x2="15" y2="15" />
-            <line x1="15" y1="5" x2="5" y2="15" />
-          </svg></button>
-        <p class="micro-cap sub-dialog__tag">Consumables &amp; Disposables Audit</p>
-        <h3 id="sub-dialog-cost-1-title">The Audit That Finds What Your Invoices Don't Show</h3>
-      </div>
-      <div class="sub-dialog__content">
-        <div class="sub-dialog__body">
-          <p>This is a direct, department-by-department review of recurring consumable and disposable spend, starting
-            with the highest-volume areas: CSSD, operating theatres, and general wards. Every recurring line item gets
-            checked against three questions: does the current specification need to be this expensive to do its clinical
-            job, is there an equivalent alternative that costs less, and is this something that could be made in-house
-            instead of purchased pre-made. None of those questions get asked in a typical procurement cycle, where the
-            default is to reorder what was ordered last time.</p>
-          <p>The kind of result this finds is well documented, not speculative. A peer-reviewed CSSD cost study found
-            six-figure rupee monthly savings from just two reprocessed items. A separate multi-year hospital study found
-            a modified inventory system cut weekly consumable costs by close to half. These aren't projections. They're
-            what a proper audit of this specific spend category tends to turn up.</p>
-        </div>
-        <div class="mockup-card">
-          <div class="mockup-header">
-            <span class="mockup-header-title">CSSD Audit — As of Q2'26 · n=1 tertiary hospital</span>
-            <span class="mockup-status">₹94k/mo · 2 items</span>
-          </div>
-          <div class="mockup-metrics">
-            <div class="mockup-metric">
-              <div class="mockup-metric-head">
-                <span class="mockup-label">Dressing pads (in-house)</span>
-                <span class="mockup-metric-values"><strong>₹70,377</strong><span
-                    class="mockup-delta mockup-delta--good">/mo saved</span></span>
-              </div>
-              <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--current"
-                  style="--w: 74%;"></span><span class="mockup-track-fill mockup-track-fill--target"
-                  style="--w: 100%;"></span></div>
-            </div>
-            <div class="mockup-metric">
-              <div class="mockup-metric-head">
-                <span class="mockup-label">Gauze swabs (in-house)</span>
-                <span class="mockup-metric-values"><strong>₹24,104</strong><span
-                    class="mockup-delta mockup-delta--good">/mo saved</span></span>
-              </div>
-              <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--current"
-                  style="--w: 25%;"></span><span class="mockup-track-fill mockup-track-fill--target"
-                  style="--w: 100%;"></span></div>
-            </div>
-            <div class="mockup-metric">
-              <div class="mockup-metric-head">
-                <span class="mockup-label">Inventory system — weekly cost</span>
-                <span class="mockup-metric-values"><em>QAR 31k</em><span class="mockup-arrow">→</span><strong>QAR
-                    16k</strong><span class="mockup-delta mockup-delta--good">-48% · 3 yrs</span></span>
-              </div>
-              <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
-                  style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
-                  style="--w: 52%;"></span></div>
-            </div>
-          </div>
-          <div class="mockup-footnote">Source: Da Cruz &amp; J. CSSD optimisation SAGE 2022 n=1 tertiary corporate
-            hospital · Qatar Kanban PMC n=1 storeroom QAR 31k→16k 79%→90% satisfaction</div>
-        </div>
-        <div class="mockup-card" style="margin-top: var(--space-lg);">
-          <div class="mockup-header">
-            <span class="mockup-header-title">Where It Lands — Weekly Spend</span>
-            <span class="mockup-status">-48%</span>
-          </div>
-          <div class="mockup-metrics">
-            <div class="mockup-metric">
-              <div class="mockup-metric-head">
-                <span class="mockup-label">Baseline</span>
-                <span class="mockup-metric-values"><strong>QAR 31,000</strong></span>
-              </div>
-              <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
-                  style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
-                  style="--w: 100%;"></span></div>
-            </div>
-            <div class="mockup-metric">
-              <div class="mockup-metric-head">
-                <span class="mockup-label">After 3 years</span>
-                <span class="mockup-metric-values"><strong>QAR 16,000</strong><span
-                    class="mockup-delta mockup-delta--good">-48%</span></span>
-              </div>
-              <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
-                  style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
-                  style="--w: 52%;"></span></div>
-            </div>
-          </div>
-          <div class="mockup-footnote">QAR 31,000 → QAR 16,000 weekly · 3-year implementation · Staff 79%→90% ·
-            Compliance 76%→95%</div>
-        </div>
-        <div class="sub-dialog__foot">
-          <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
-          <p class="sub-dialog__foot-note">Six-figure rupee savings from two items — not a projection, a peer-reviewed
-            finding.</p>
-        </div>
-      </div>
-    </dialog>
-
-    <dialog class="sub-dialog" id="sub-dialog-cost-2" aria-labelledby="sub-dialog-cost-2-title">
-      <div class="sub-dialog__head">
-        <button type="button" class="sub-dialog__close" aria-label="Close dialog"><svg width="20" height="20"
-            viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            aria-hidden="true">
-            <line x1="5" y1="5" x2="15" y2="15" />
-            <line x1="15" y1="5" x2="5" y2="15" />
-          </svg></button>
-        <p class="micro-cap sub-dialog__tag">Alternative Product Matching</p>
-        <h3 id="sub-dialog-cost-2-title">Same Clinical Outcome. Different Price Tag.</h3>
-      </div>
-      <div class="sub-dialog__content">
-        <div class="sub-dialog__body">
-          <p>In-house teams often default to original-manufacturer consumables out of habit, not clinical necessity. Our
-            biomedical engineers evaluate alternatives at the component level, the same rigor used in Biomedical
-            Engineering Consulting, to separate a genuine clinical requirement from a brand markup.</p>
-        </div>
-        <div class="mockup-card">
-          <div class="mockup-header">
-            <span class="mockup-header-title">Spec Equivalence — CSSD Packaging</span>
-            <span class="mockup-status">Like-for-like swap</span>
-          </div>
-          <table class="sub-dialog__table">
-            <thead>
-              <tr>
-                <th>Current approach</th>
-                <th>Evaluated alternative</th>
-                <th>Cost</th>
-                <th>Clinical equivalence</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Soft-wrap sterile pack</td>
-                <td>Rigid-container system</td>
-                <td>~$190k/yr saved</td>
-                <td>Equivalent — damaged-pack costs counted</td>
-              </tr>
-              <tr>
-                <td>90-piece set (oversized)</td>
-                <td>70-piece set (used)</td>
-                <td>~$408k/yr saved</td>
-                <td>Equivalent — 22% reduction</td>
-              </tr>
-            </tbody>
-          </table>
-          <div class="mockup-footnote">Source: B. Braun CSSD cost comparisons · Underlying German two-hospital
-            peer-reviewed study supports direction · Cross-check before publishing as THC claim</div>
-        </div>
-        <div class="sub-dialog__foot">
-          <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
-        </div>
-      </div>
-    </dialog>
-
-    <dialog class="sub-dialog" id="sub-dialog-cost-3" aria-labelledby="sub-dialog-cost-3-title">
-      <div class="sub-dialog__head">
-        <button type="button" class="sub-dialog__close" aria-label="Close dialog"><svg width="20" height="20"
-            viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            aria-hidden="true">
-            <line x1="5" y1="5" x2="15" y2="15" />
-            <line x1="15" y1="5" x2="5" y2="15" />
-          </svg></button>
-        <p class="micro-cap sub-dialog__tag">Continuous Cost Optimization</p>
-        <h3 id="sub-dialog-cost-3-title">A One-Time Audit Finds Savings. An Ongoing Program Keeps Them.</h3>
-      </div>
-      <div class="sub-dialog__content">
-        <div class="sub-dialog__body">
-          <p>Pricing and specs drift back toward the expensive default over time, as vendors change terms and staff turn
-            over. This session is the recurring version of the four above: a scheduled review instead of a single pass,
-            so new leakage gets caught in months, not rediscovered as a surprise next year.</p>
-        </div>
-        <div class="mockup-card">
-          <div class="mockup-header">
-            <span class="mockup-header-title">Continuous Program — Quarterly Review</span>
-            <span class="mockup-status">Retainer</span>
-          </div>
-          <p class="mockup-footnote" style="margin: 0;">No chart needed — recurring cadence note. Quarterly review of
-            consumable and disposable spend, so new leakage gets caught within months instead of a year later. Built on
-            THC three-part diagnostic method as ongoing check.</p>
-        </div>
-        <div class="sub-dialog__foot">
-          <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
-        </div>
-      </div>
-    </dialog>
-
-    <dialog class="sub-dialog" id="sub-dialog-cost-4" aria-labelledby="sub-dialog-cost-4-title">
-      <div class="sub-dialog__head">
-        <button type="button" class="sub-dialog__close" aria-label="Close dialog"><svg width="20" height="20"
-            viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            aria-hidden="true">
-            <line x1="5" y1="5" x2="15" y2="15" />
-            <line x1="15" y1="5" x2="5" y2="15" />
-          </svg></button>
-        <p class="micro-cap sub-dialog__tag">CSSD Packaging</p>
-        <h3 id="sub-dialog-cost-4-title">The Pouch-Versus-Wrap Decision Nobody Revisits</h3>
-      </div>
-      <div class="sub-dialog__content">
-        <div class="sub-dialog__body">
-          <p>Lightweight instruments like forceps and scissors don''t always need a fully wrapped tray. Where a
-            peel-open pouch does the same sterilization job, the material cost difference compounds across thousands of
-            cycles a year, and it''s exactly the kind of swap that stays unexamined once a packing protocol is set and
-            nobody''s asked to revisit it.</p>
-        </div>
-        <div class="sub-dialog__foot">
-          <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
-        </div>
-      </div>
-    </dialog>
-
-    <dialog class="sub-dialog" id="sub-dialog-cost-5" aria-labelledby="sub-dialog-cost-5-title">
-      <div class="sub-dialog__head">
-        <button type="button" class="sub-dialog__close" aria-label="Close dialog"><svg width="20" height="20"
-            viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-            aria-hidden="true">
-            <line x1="5" y1="5" x2="15" y2="15" />
-            <line x1="15" y1="5" x2="5" y2="15" />
-          </svg></button>
-        <p class="micro-cap sub-dialog__tag">Surgical Supply Waste</p>
-        <h3 id="sub-dialog-cost-5-title">The Supplies Opened and Never Used</h3>
-      </div>
-      <div class="sub-dialog__content">
-        <div class="sub-dialog__body">
-          <p>Several independent studies, including a 219-surgeon multicenter survey and a departmental audit at UCSF,
-            put unused-but-opened surgical supply waste at roughly a quarter of what gets opened for a given case. A
-            preference-card review, matching what gets used to what gets opened, is a standard fix. One documented case
-            cut waste on a single procedure type by over 90 percent.</p>
-        </div>
-        <div class="mockup-card">
-          <div class="mockup-header">
-            <span class="mockup-header-title">Surgical Waste â€” Multicenter &amp; UCSF</span>
-            <span class="mockup-status">~26% unused</span>
-          </div>
-          <div class="mockup-metrics">
-            <div class="mockup-metric">
-              <div class="mockup-metric-head">
-                <span class="mockup-label">Multicenter survey (219 surgeons)</span>
-                <span class="mockup-metric-values"><strong>~26%</strong><span
-                    class="mockup-delta mockup-delta--warn">Opened &amp; unused</span></span>
-              </div>
-              <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
-                  style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
-                  style="--w: 26%;"></span></div>
-            </div>
-            <div class="mockup-metric">
-              <div class="mockup-metric-head">
-                <span class="mockup-label">UCSF neurosurgery audit</span>
-                <span class="mockup-metric-values"><em>13.1%</em><span
-                    class="mockup-arrow">â†’</span><strong>$653</strong><span
-                    class="mockup-delta mockup-delta--bad">/case Â· $2.9M/yr</span></span>
-              </div>
-              <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
-                  style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
-                  style="--w: 13%;"></span></div>
-            </div>
-            <div class="mockup-metric">
-              <div class="mockup-metric-head">
-                <span class="mockup-label">Preference-card fix â€” Stanford Urology</span>
-                <span class="mockup-metric-values"><strong>~92%</strong><span
-                    class="mockup-delta mockup-delta--good">Waste cut</span></span>
-              </div>
-              <div class="mockup-track"><span class="mockup-track-fill mockup-track-fill--target"
-                  style="--w: 100%;"></span><span class="mockup-track-fill mockup-track-fill--current"
-                  style="--w: 92%;"></span></div>
-            </div>
-          </div>
-          <div class="mockup-footnote">Source: 219-surgeon multicenter survey ~26% Â· UCSF neurosurgery $653/case 13.1%
-            $2.9M/yr Â· French audit 20.1% Â· Stanford 92% preference-card Â· Range 20-26% baseline vs 92% fix kept
-            distinct</div>
-        </div>
-        <div class="sub-dialog__foot">
-          <a href="contact.html" class="btn btn-primary">Book a Strategic Diagnostic Session</a>
-        </div>
-      </div>
-    </dialog>
 
     <!-- ======== SYSTEMIC TIE-IN ======== -->
     <section class="section section-soft">

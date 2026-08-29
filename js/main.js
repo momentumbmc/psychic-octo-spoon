@@ -5,6 +5,20 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
+  // ---- Global Link / URL Tokens ----
+  // Central registry for external and partner links.
+  // Changing a URL here automatically updates all elements with [data-link-token="key"] across the site.
+  const LINK_TOKENS = {
+    tradeschool: 'https://momentumbmc.github.io/tradeschool/'
+  };
+
+  document.querySelectorAll('[data-link-token]').forEach(function (el) {
+    const token = el.getAttribute('data-link-token');
+    if (token && LINK_TOKENS[token]) {
+      el.setAttribute('href', LINK_TOKENS[token]);
+    }
+  });
+
   // ---- Navbar scroll state ----
   const nav = document.querySelector('.nav');
   if (nav) {
