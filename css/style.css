@@ -140,8 +140,8 @@ html {
 body {
   font-family: var(--font-sans);
   font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: clamp(16px, 0.3vw + 15px, 17.5px);
+  line-height: 1.72;
   color: var(--ink);
   background: var(--canvas);
   font-feature-settings: 'ss01' on;
@@ -172,10 +172,17 @@ a:hover {
 }
 
 .display-xl {
-  font-size: 48px;
+  font-size: clamp(26px, 2.2vw + 20px, 52px);
   font-weight: 300;
   line-height: 1.15;
-  letter-spacing: -0.96px;
+  letter-spacing: -0.025em;
+}
+
+h2 {
+  font-size: clamp(24px, 1.4vw + 20px, 38px);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
 }
 
 .heading-lg {
@@ -193,10 +200,10 @@ a:hover {
 }
 
 .body-lg {
-  font-size: 17px;
+  font-size: clamp(17px, 0.4vw + 15.5px, 19px);
   font-weight: 400;
-  line-height: 1.7;
-  letter-spacing: 0;
+  line-height: 1.68;
+  letter-spacing: -0.01em;
 }
 
 p.hero-subhead {
@@ -204,7 +211,7 @@ p.hero-subhead {
 }
 
 .body-md {
-  font-size: 16px;
+  font-size: clamp(16px, 0.3vw + 15px, 17.5px);
   font-weight: 400;
   line-height: 1.7;
   letter-spacing: 0;
@@ -652,7 +659,7 @@ p.hero-subhead {
 }
 
 .section-body {
-  max-width: 680px;
+  max-width: 720px;
   color: var(--ink-secondary);
   margin-bottom: var(--space-xl);
 }
@@ -762,7 +769,7 @@ p.hero-subhead {
 
 .card-body {
   color: var(--ink-secondary);
-  font-size: 16px;
+  font-size: clamp(16px, 0.25vw + 15.2px, 17px);
   font-weight: 400;
   line-height: 1.7;
 }
@@ -1013,7 +1020,7 @@ p.hero-subhead {
 
 .sub-dialog__body {
   color: var(--ink-secondary);
-  font-size: 15px;
+  font-size: 16.5px;
   line-height: 1.7;
   margin-bottom: var(--space-xl);
 }
@@ -2720,10 +2727,7 @@ p.hero-subhead {
 @media (max-width: 768px) {
 
 
-  .display-xl {
-    font-size: 32px;
-    letter-spacing: -0.64px;
-  }
+
 
   .nav-links {
     position: fixed;
@@ -3004,10 +3008,7 @@ p.hero-subhead {
 
 
 
-  .display-xl {
-    font-size: 26px;
-    letter-spacing: -0.52px;
-  }
+
 
   .container {
     padding: 0 var(--space-lg);
@@ -3096,10 +3097,7 @@ p.hero-subhead {
 
 
 
-  .display-xl {
-    font-size: 22px;
-    letter-spacing: -0.44px;
-  }
+
 
   .container {
     padding: 0 var(--space-md);

@@ -83,10 +83,10 @@
 }
 
 .thc-lvp__title {
-  font-size: 32px;
+  font-size: clamp(24px, 1.4vw + 20px, 38px);
   font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.64px;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
   color: var(--ink);
   margin-bottom: var(--space-md);
 }
@@ -96,8 +96,8 @@
 }
 
 .thc-lvp__desc {
-  font-size: 16px;
-  line-height: 1.7;
+  font-size: clamp(16px, 0.35vw + 14.8px, 17.5px);
+  line-height: 1.72;
   color: var(--ink-secondary);
   margin-bottom: var(--space-xl);
 }
@@ -277,9 +277,7 @@
     padding: var(--space-xl);
   }
 
-  .thc-lvp__title {
-    font-size: 26px;
-  }
+
 
   .thc-lvp__image img {
     min-height: 280px;
