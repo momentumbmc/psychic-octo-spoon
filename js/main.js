@@ -1,5 +1,5 @@
 // ============================================================
-// THC Business Solutions — Main JavaScript
+// The Happiness Company Business Solutions Private Limited — Main JavaScript
 // Stripe-quality animations: scroll reveals, counters, parallax
 // ============================================================
 
